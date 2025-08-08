@@ -11,7 +11,7 @@ function StepControls({
     <>
       {/* Left Arrow - Decrease Step */}
       <img
-        src="./arrow-left.svg"
+        src="./public/arrow-left.svg"
         onClick={stepIndex > 0 ? onDecrease : undefined}
         style={{
           position: 'fixed',
@@ -41,7 +41,7 @@ function StepControls({
 
       {/* Right Arrow - Increase Step */}
       <img
-        src="./arrow-right.svg"
+        src="./public/arrow-right.svg"
         onClick={stepIndex < numSteps - 1 ? onIncrease : undefined}
         style={{
           position: 'fixed',
