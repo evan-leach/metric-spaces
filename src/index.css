@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+/* Remove default margins for fullscreen */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* Invert Mafs colors: white background, black foreground */
+.MafsView {
+  --mafs-bg: #eeeeee !important;
+  --mafs-fg: #000000 !important;
+  --mafs-line-color: #aaa !important;
+  --grid-line-subdivision-color: #ddd !important;
+}
+
+/* Fix italic text centering - compensate for visual slant */
+em {
+  transform: translateX(-0.08em);
+  display: inline-block;
+} 
