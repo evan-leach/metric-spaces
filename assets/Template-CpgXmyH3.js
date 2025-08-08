@@ -1,1 +1,0 @@
-import{j as n}from"./index-BU5vQfao.js";import{B as r}from"./BaseScene-BLnxvdS3.js";const a={steps:["Steps"]};function f({windowSize:e,stepIndex:t,isPanelOpen:s,sceneKey:o}){return n.jsx(r,{config:a,sceneKey:o,stepIndex:t,isPanelOpen:s,windowSize:e})}export{a as SceneConfig,f as default};
