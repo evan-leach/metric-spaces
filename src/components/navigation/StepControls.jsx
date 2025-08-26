@@ -11,7 +11,7 @@ function StepControls({
     <>
       {/* Left Arrow - Decrease Step */}
       <img
-        src="/metric-spaces/arrow-left.svg"
+        src="/arrow-left.svg"
         onClick={stepIndex > 0 ? onDecrease : undefined}
         style={{
           position: 'fixed',
@@ -19,7 +19,8 @@ function StepControls({
           top: '50%',
           transform: 'translateY(-50%)',
           cursor: stepIndex <= 0 ? 'default' : 'pointer',
-          zIndex: 1000,
+          // Ensure sidebar (zIndex: 1000) sits above arrows
+          zIndex: 998,
           transition: 'left 0.3s ease-in-out, transform 0.1s ease, opacity 0.2s ease',
           opacity: stepIndex <= 0 ? 0.4 : 0.9,
           filter: stepIndex <= 0 ? 'drop-shadow(0 10px 30px rgba(0,0,0,0.6))' : 'drop-shadow(0 20px 60px rgba(0,0,0,0.8))',
@@ -41,7 +42,7 @@ function StepControls({
 
       {/* Right Arrow - Increase Step */}
       <img
-        src="/metric-spaces/arrow-right.svg"
+        src="/arrow-right.svg"
         onClick={stepIndex < numSteps - 1 ? onIncrease : undefined}
         style={{
           position: 'fixed',
@@ -49,7 +50,8 @@ function StepControls({
           top: '50%',
           transform: 'translateY(-50%)',
           cursor: stepIndex >= numSteps - 1 ? 'default' : 'pointer',
-          zIndex: 1000,
+          // Keep below sidebar stacking context just for consistency
+          zIndex: 998,
           transition: 'transform 0.1s ease, opacity 0.2s ease',
           opacity: stepIndex >= numSteps - 1 ? 0.4 : 0.9,
           filter: stepIndex >= numSteps - 1 ? 'drop-shadow(0 10px 30px rgba(0,0,0,0.6))' : 'drop-shadow(0 20px 60px rgba(0,0,0,0.8))',

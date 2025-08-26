@@ -129,15 +129,7 @@ function Balls({
     }
   }), [])
 
-  const circle1Keyframes = useMemo(() => ({
-    radius: {
-      14: 0,
-      15: 1.6,
-      16: 0
-    }
-  }), [])
-
-  const circle2Keyframes = useMemo(() => ({
+  const circlesKeyframes = useMemo(() => ({
     radius: {
       14: 0,
       15: 1.6,
@@ -249,7 +241,7 @@ function Balls({
 
         <Circle
           center={[-2.4,-0.8]}
-          keyframes={circle2Keyframes}
+          keyframes={circlesKeyframes}
           stepIndex={stepIndex}
           labelContext={() => `$B_2(x_1)$`}
           labelAttach="sw"
@@ -257,7 +249,7 @@ function Balls({
         />
         <Circle
           center={[2.4,-0.8]}
-          keyframes={circle1Keyframes}
+          keyframes={circlesKeyframes}
           stepIndex={stepIndex}
           color={colors.purple}
           strokeStyle='dashed'

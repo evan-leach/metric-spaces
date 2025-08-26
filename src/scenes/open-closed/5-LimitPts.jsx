@@ -11,7 +11,7 @@ export const SceneConfig = {
   zoom: { min: 0.2, max: 50000 },
   steps: [
     "TOP: At the start of this section, we saw elements of a set $A$ that _looked_ different and turned\
-    that qualitative observation into precise definitions for interior, exterior, and boundary points.",
+    our qualitative observations into precise definitions for interior, exterior, and boundary points.",
     "TOP: For example, these two points _look_ different, and we can indeed distinguish them. One is an interior point, and one\
     is a boundary point.",
     "TOP: However, we don't yet have a way to distinguish these two points from each other, even though they also look different.\
@@ -24,7 +24,7 @@ export const SceneConfig = {
     "TOP: This is how we disambiguate between the two boundary points. Any neighborhood of $x$ contains elements of $A$\
     other than $x$...",
     "TOP: ...and while some neighborhoods of $y$ contain elements of $A$ other than $y$...",
-    "TOP: ...a small enough neighborhood will contain _only_ $y$. This means that $x$ is a limit point of $A$, and $y$ is not.",
+    "TOP: ...a small enough neighborhood will contain _only_ $y$. $$$$ This means that $x$ is a limit point of $A$, and $y$ is not.",
     "TOP: Not all limit points are necessarily elements of $A$, as this example shows.",
     "TOP: The two limit points we've seen so far had _other limit points_ as neighbors. This point, however, is different.\
     $$$$ Although the points of $A$ get closer and closer to it, none of the other points in this cluster are _limit points._\

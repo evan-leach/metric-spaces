@@ -107,7 +107,7 @@ function Open({
   }), [])
 
   const animatedYProps = useKeyframeAnimation(pointYKeyframes, stepIndex)
-  const pointYPosition = [animatedYProps.x ?? 1.5, animatedYProps.y ?? 1.0]
+  const pointYPosition = useMemo(() => [animatedYProps.x ?? 1.5, animatedYProps.y ?? 1.0], [animatedYProps.x, animatedYProps.y])
 
   const neighborhoodAnimatedProps = useKeyframeAnimation(neighborhoodKeyframes, stepIndex)
   const currentNeighborhoodRadius = neighborhoodAnimatedProps.radius ?? 0

@@ -1,5 +1,4 @@
 import React, { useMemo } from 'react'
-import { useTransformContext, vec } from 'mafs'
 import { colors } from '../../config/colors'
 
 // Custom filled parametric component based on Mafs internals
@@ -9,14 +8,12 @@ function FilledParametric({
   color = colors.blue, 
   fillOpacity = 0.3, 
   strokeOpacity = 0.8,
-  weight = 3,
+  weight = 2,
   style = "solid",
-  minSamplingDepth = 8
+  minSamplingDepth = 8,
+  forceKeyframes = []
 }) {
-  const { viewTransform } = useTransformContext()
-  const pixelsPerSquare = -vec.det(viewTransform)
   const [tMin, tMax] = domain
-  const errorThreshold = 0.1 / pixelsPerSquare
 
   // This is adapted from Mafs' internal sampleParametric function
   const svgPath = useMemo(() => {
@@ -24,9 +21,26 @@ function FilledParametric({
     const numSamples = Math.pow(2, minSamplingDepth)
     const step = (tMax - tMin) / numSamples
     
-    // Sample points along the parametric curve
+    // Create a set of all t values to sample, including forced keyframes
+    const tValues = new Set()
+    
+    // Add regular sampling points
     for (let i = 0; i <= numSamples; i++) {
       const t = tMin + i * step
+      tValues.add(t)
+    }
+    
+    // Add forced keyframes (only those within the domain)
+    forceKeyframes.forEach(t => {
+      if (t >= tMin && t <= tMax) {
+        tValues.add(t)
+      }
+    })
+    
+    // Convert to sorted array and sample points
+    const sortedTValues = Array.from(tValues).sort((a, b) => a - b)
+    
+    for (const t of sortedTValues) {
       const [x, y] = xy(t)
       points.push([x, y])
     }
@@ -42,7 +56,7 @@ function FilledParametric({
     pathString += " Z"
     
     return pathString
-  }, [xy, tMin, tMax, minSamplingDepth])
+  }, [xy, tMin, tMax, minSamplingDepth, forceKeyframes])
 
   // Calculate custom dash pattern based on stroke width for proper visual ratio
   const dashPattern = useMemo(() => {

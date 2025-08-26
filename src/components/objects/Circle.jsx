@@ -48,8 +48,10 @@ function Circle({
   labelAttachDistance = 30,
   labelSize = 14,
   labelColor = null,
+  labelOpacity = 1,
   labelAtCenter = false,    // When true, positions label at center point instead of circle boundary
-  animationThresholdMultiplier = 1
+  animationThresholdMultiplier = 1,
+  radiusScale = 1
 }) {
   // Generate opacity keyframes based on radius keyframes
   const enhancedKeyframes = useMemo(() => {
@@ -98,7 +100,7 @@ function Circle({
     <>
       <MafsCircle
         center={center}
-        radius={radius}
+        radius={radius * radiusScale}
         color={color}
         fillOpacity={fillOpacity * opacity}
         strokeOpacity={strokeOpacity * opacity}
@@ -116,13 +118,13 @@ function Circle({
       {labelContext && labelPosition && (
         <Label
           labelContext={labelContext}
-          labelContextArgs={[center, radius]}
+          labelContextArgs={[center, radius * radiusScale]}
           position={labelPosition}
           attach={labelAttach}
           attachDistance={labelAttachDistance}
           size={labelSize}
           color={labelColor || color}
-          opacity={opacity}
+          opacity={opacity * labelOpacity}
         />
       )}
     </>

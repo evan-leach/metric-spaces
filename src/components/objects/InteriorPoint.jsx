@@ -36,7 +36,6 @@ function InteriorPoint({
   
   safetyFactor = 0.8,
   distanceToBoundary = null,
-  insideBlob = null,
   
   blobSize = null,
   blobHarmonics = null
@@ -72,14 +71,7 @@ function InteriorPoint({
     }
     return () => 1.0
   }, [distanceToBoundary, blobSize, blobHarmonics])
-  
-  const finalInsideBlob = useMemo(() => {
-    if (insideBlob) return insideBlob
-    if (blobSize && blobHarmonics) {
-      return createInsideBlobFunction(blobSize, blobHarmonics)
-    }
-    return () => true
-  }, [insideBlob, blobSize, blobHarmonics])
+
   
   const circleRadius = useMemo(() => {
     if (!showCircle) return 0

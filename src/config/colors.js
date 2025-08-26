@@ -15,4 +15,9 @@ export const colors = {
   'black': '#000000'
 }
 
+export const textColors = {
+  'italic': '#00268fff',
+  'bold': '#930025ff'
+}
+
 export default colors 

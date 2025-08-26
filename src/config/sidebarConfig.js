@@ -23,8 +23,17 @@ export const sidebarConfig = [
     ]
   },
   {
-    title: 'Coming soon: Unions and Intersections',
+    title: 'Unions and Intersections',
     folder: 'unions-intersections',
+    buttons: [
+      { text: 'Unions and intersections of sets', scene: '1-Defs' },
+      { text: 'Unions of open sets are open', scene: '2-OpenUnion' },
+      { text: 'Finite intersections of open sets are open', scene: '3-OpenIntersect' }
+    ]
+  },
+  {
+    title: 'More Coming Soon!',
+    folder: 'none',
     buttons: []
   }
 ] 

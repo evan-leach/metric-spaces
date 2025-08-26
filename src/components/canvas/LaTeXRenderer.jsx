@@ -1,6 +1,7 @@
 import React from 'react';
 import { InlineMath, BlockMath } from 'react-katex';
 import 'katex/dist/katex.min.css';
+import { textColors } from '../../config/colors';
 
 // Simple LaTeX component for direct rendering
 export const LaTeXMath = ({ math, block = false }) => {
@@ -194,9 +195,9 @@ export const TextOverlayLaTeX = ({ content }) => {
                 {markdownParts.map((mdPart, mdIndex) => {
                   switch (mdPart.type) {
                     case 'bold':
-                      return <strong key={mdIndex}>{mdPart.content}</strong>;
+                      return <strong key={mdIndex} style={{color: textColors.bold}}>{mdPart.content}</strong>;
                     case 'italic':
-                      return <em key={mdIndex}>{mdPart.content}</em>;
+                      return <em key={mdIndex} style={{color: textColors.italic}}>{mdPart.content}</em>;
                     case 'text':
                       return <span key={mdIndex}>{mdPart.content}</span>;
                     default:

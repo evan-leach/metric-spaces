@@ -20,6 +20,46 @@ function BaseScene({
   titleContent = null,
   children
 }) {
+  // Lightweight FPS meter (toggle with 'p')
+  const [showPerf, setShowPerf] = React.useState(false)
+  const [fpsInfo, setFpsInfo] = React.useState({ fps: 0, ms: 0 })
+  const perfRef = React.useRef({ last: performance.now(), frames: 0, acc: 0, lastReport: performance.now() })
+
+  React.useEffect(() => {
+    const onKey = (e) => {
+      if (e.key.toLowerCase() === 'p') {
+        setShowPerf((v) => !v)
+      }
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [])
+
+  React.useEffect(() => {
+    if (!showPerf) return
+    let rafId
+    const tick = () => {
+      const now = performance.now()
+      const delta = now - perfRef.current.last
+      perfRef.current.last = now
+      perfRef.current.frames += 1
+      perfRef.current.acc += delta
+
+      // Update display ~4 times/second
+      if (now - perfRef.current.lastReport > 250) {
+        const avgMs = perfRef.current.acc / perfRef.current.frames
+        const fps = avgMs > 0 ? 1000 / avgMs : 0
+        setFpsInfo({ fps: Math.round(fps), ms: Math.round(avgMs) })
+        perfRef.current.frames = 0
+        perfRef.current.acc = 0
+        perfRef.current.lastReport = now
+      }
+      rafId = requestAnimationFrame(tick)
+    }
+    rafId = requestAnimationFrame(tick)
+    return () => cancelAnimationFrame(rafId)
+  }, [showPerf])
+
   // Merge config with defaults and calculate numSteps
   const finalConfig = {
     ...DEFAULT_CONFIG,
@@ -91,6 +131,28 @@ function BaseScene({
         {/* Scene-specific content */}
         {children}
       </ZoomController>
+
+      {/* FPS Overlay (toggle with 'p') */}
+      {showPerf && (
+        <div
+          style={{
+            position: 'absolute',
+            top: 8,
+            left: isPanelOpen ? 308 : 8,
+            padding: '6px 8px',
+            background: 'rgba(0,0,0,0.6)',
+            color: 'white',
+            fontFamily: 'monospace',
+            fontSize: 12,
+            borderRadius: 4,
+            zIndex: 1000
+          }}
+        >
+          <div>FPS: {fpsInfo.fps}</div>
+          <div>ms: {fpsInfo.ms}</div>
+          <div>Press 'p' to toggle</div>
+        </div>
+      )}
 
       {/* Text overlay */}
       <TextOverlay 

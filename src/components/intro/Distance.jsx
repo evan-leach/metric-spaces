@@ -50,7 +50,7 @@ function Distance({
       Math.pow(point2Position[0] - point1Position[0], 2) + Math.pow(point2Position[1] - point1Position[1], 2)
     )
     setActualDistance(distance)
-  }, [point1Position, point2Position])
+  }, [point1Position[0], point1Position[1], point2Position[0], point2Position[1]])
   
   // Calculate midpoint for label positioning
   const midpoint = [

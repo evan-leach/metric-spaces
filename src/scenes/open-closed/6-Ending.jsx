@@ -35,7 +35,7 @@ export const SceneConfig = {
     "TOP: If $x$ is not an element of $A$, though, then the element of $A$ must be some point _other_ than $x$. Since every\
     neighborhood of $x$ must contain an element of $A$ other than $x$, this means that $x$ is a limit point of\
     $A$! $$$$ In other words, every boundary point is _either_ an element or a limit point of $A$ (or both).",
-    "Here is a summary of what we proved: $$$$ Every interior point is an element of the set. $$$$ Every exterior point is _neither_\
+    "Here is a summary of what we saw: $$$$ Every interior point is an element of the set. $$$$ Every exterior point is _neither_\
     an element _nor_ a limit point of the set. $$$$ Every boundary point is _either_ an element _or_ a limit point (or both) of the set.",
     "Now we can prove the fact in the title of this lesson: that closed sets contain their limit points. $$$$ Since exterior points\
     cannot be limit points, this means that every limit point is either an interior point or a boundary point. Interior points are\
@@ -44,9 +44,9 @@ export const SceneConfig = {
     "TOP: It turns out that the reverse is also true: if a set contains its limit points, then it must be closed. In other words, any\
     set containing its limit points also contains all of its boundary points.",
     "TOP: We previously showed that every boundary point $x$ of a set $A$ must be either an element or a limit point of $A$. If every\
-    limit point of $A$ is also an element of $A$, then this means that $x$ is an element of $A$ in either case!",
+    limit point of $A$ is also an element of $A$, then this means that $x$ is an element of $A$ in either case.",
     "TOP: This means that a set contains its limit points _if and only if_ it is closed. $$$$ Because these conditions are equivalent,\
-    this means that we have a new definition for closed sets: sets that contain all of their limit points.",
+    we have a new definition for closed sets: sets that contain all of their limit points.",
     "In this section, we've developed a new way to think about shapes using nothing more than a distance function. $$$$ We've\
     classified elements of our metric space as interior, exterior, and boundary points, and we've seen how they relate to limit\
     points. We also used this classification to develop the concepts of open and closed sets.",
@@ -54,7 +54,7 @@ export const SceneConfig = {
     only of interior points. $$$$ We have also proven the equivalence of _three_ definitions for closed sets: sets containing their\
     boundaries, sets whose complements are open, and sets containing all of their limit points.",
     "With the end of this section, we have finished covering the fundamentals of metric spaces. You should make\
-    sure you have a solid grasp of these ideas, as we are about to push them to their limits. $$$$ The next section is a deep dive\
+    sure you have a solid grasp of these ideas, as we are about to push them to their limits. $$$$ The next section takes us deeper\
     into the world of infinity. You'll be suprised by how completely intuitive facts _break_ in the infinite setting."
   ]
 }
