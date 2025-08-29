@@ -41,8 +41,8 @@ export const SceneConfig = {
     mean is that the function is positive definite, is symmetric, and satisfies the triangle inequality. $$$$ We call these three\
     properties the *axioms* of a metric space, and we call any function satisfying all three axioms a *metric.*",
     "We now have the complete definition of a metric space: a set equipped with a metric. $$$$ The set tells us what the points\
-    in our space are, and the metric tells us how to measure the distance between any two points. $$$$ In the next section,\
-    we will explore some examples of metric spaces. Just how far can we go while still obeying the axioms?"
+    in our space are, and the metric tells us how to measure the distance between any two points.",
+    "In the next section, we will explore some examples of metric spaces. Just how far can we go while still obeying the axioms?"
   ]
 }
 

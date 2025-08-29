@@ -62,8 +62,8 @@ export const SceneConfig = {
     "Generality comes at a cost, though. Since our arguments need to work in any metric space, this means we can't use\
     most concepts from geometry like straight lines and angles. Everything we do will rely only on our distance function.\
     $$$$ Though this restriction may seem daunting at first, we can actually go quite far using nothing but distances.\
-    We will realize that many familar ideas about shapes can be defined using metrics, and we will discover entirely new\
-    concepts as well. $$$$ The next lesson will contain our first such example."
+    We will define some familar ideas using metrics and discover entirely new concepts as well.",
+    "The next lesson will contain our first such example."
   ]
 }
 

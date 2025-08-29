@@ -59,7 +59,8 @@ export const SceneConfig = {
     "We won't ever need to go into so much detail in the future, but this proof shows that you can get quite far just by breaking\
     down definitions. It's a natural first step when encountering any new problem. $$$$ If you go back and make sure you understand\
     everything, then you'll solidify your understanding of all the concepts we've seen so far, from open sets, to interior points,\
-    to neighborhoods. In the next lesson, we'll take a break from the more involved calculations and learn about _closed sets._"
+    to neighborhoods.",
+    "In the next lesson, we'll take a break from the more involved calculations and learn about _closed sets._"
   ]
 }
 

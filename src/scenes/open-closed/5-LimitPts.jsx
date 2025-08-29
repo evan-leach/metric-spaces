@@ -21,8 +21,7 @@ export const SceneConfig = {
     neighborhoods. The other point would still lie on the boundary even if it wasn't an _element_ of $A$.",
     "This leads us to the following definition: $$$$ A point $x$ is a *limit point* of a set $A$ if every neighborhood of $x$\
     contains a point of $A$ _other than_ $x$ _itself._",
-    "TOP: This is how we disambiguate between the two boundary points. Any neighborhood of $x$ contains elements of $A$\
-    other than $x$...",
+    "TOP: This is how we distinguish the two boundary points. Any neighborhood of $x$ contains elements of $A$ other than $x$...",
     "TOP: ...and while some neighborhoods of $y$ contain elements of $A$ other than $y$...",
     "TOP: ...a small enough neighborhood will contain _only_ $y$. $$$$ This means that $x$ is a limit point of $A$, and $y$ is not.",
     "TOP: Not all limit points are necessarily elements of $A$, as this example shows.",
@@ -55,7 +54,8 @@ export const SceneConfig = {
     closest point. This means that if $x$ really is a limit point, every neighborhood of $x$ must contain infinitely many points of $A$.",
     "This proof gives us an example of how to work with infinity in practice. Rather than trying to imagine infinitely many points, we just\
     consider infinity to be _not finite._ Infinity is how we break the rules that finite sets have to follow (such as having minimal and maximal\
-    elements). $$$$ Infinity will become more and more important in the next few sections. However, we will first conclude _this_ section by\
+    elements).",
+    "Infinity will become more and more important in the next few sections. However, we will first conclude this section by\
     exploring how limit points relate to interior, exterior, and boundary points. We'll finish with a third equivalent definition of closed sets\
     using limit points."
   ]

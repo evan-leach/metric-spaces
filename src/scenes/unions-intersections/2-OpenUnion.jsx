@@ -44,7 +44,8 @@ export const SceneConfig = {
     between $-1$ and $1$. $$$$ With hardly any work, we've proven that this set is open.",
     "Infnity hasn't been an issue for us so far, but it's about to start causing problems. $$$$ Our next question is whether an\
     intersection of open sets is open, and answering it will be a little more complicated. In fact, our proof will only work\
-    for a _finite_ number of open sets. We'll see how this argument works, as well as how infinity overwhelms it, in the next lesson."
+    for a _finite_ number of open sets.",
+    "We'll see how this argument works, as well as how infinity overwhelms it, in the next lesson."
   ]
 }
 

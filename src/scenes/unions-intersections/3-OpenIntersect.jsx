@@ -26,10 +26,11 @@ export const SceneConfig = {
     is an open set, we can find a neighborhood $N_{r_2}(x)$ which lies in $A_2$.",
     "TOP: We can repeat this process for every open set in our collection, and we end up with a collection $$N_{r_1}(x),\
     N_{r_2}(x), \\dots, N_{r_n}(x)$$ of neighborhoods, each of which lie in their respective open sets.",
-    "TOP: The trick is to now consider the _smallest_ neighborhood in this collection (i.e. the one with the smallest\
-    radius).",
-    "TOP: This neighborhood lies in _all_ of the other neighborhoods, so it is a subset of all of our open sets.\
-    In other words, it lies entirely in the intersection!",
+    "TOP: In order to prove that $x$ is an interior point, though, we need to find a _single_ neighborhood which is a\
+    subset of _all_ these open sets. $$$$ We've already seen that picking a random neighborhood from this collection\
+    might not work, so what do we do?",
+    "TOP: The trick is to consider the _smallest_ one. This neighborhood lies in all of the other neighborhoods,\
+    so it is a subset of all of our open sets. In other words, it lies entirely in the intersection!",
     "Since we've shown that every point $x$ in the intersection of our open sets is an interior point, this proves\
     that the intersection is open.",
     "TOP: Here's an example of how we can use this fact. This square, consisting of all points whose $x$ and $y$\
@@ -54,7 +55,7 @@ function OpenIntersect({ windowSize, stepIndex, isPanelOpen, sceneKey }) {
     radius: {
       5: 0,
       6: 0.37,
-      8: 0
+      9: 0
     }
   }), [])
 
@@ -62,7 +63,7 @@ function OpenIntersect({ windowSize, stepIndex, isPanelOpen, sceneKey }) {
     radius: {
       6: 0,
       7: 0.33,
-      8: 0
+      9: 0
     }
   }), [])
 
@@ -237,8 +238,8 @@ function OpenIntersect({ windowSize, stepIndex, isPanelOpen, sceneKey }) {
 
       <InequalityPlot
         yInequality={{ 
-          ">=": (x) => -1.6,
-          "<=": (x) => 0
+          ">=": (x) => -0.8,
+          "<=": (x) => 0.8
         }}
         style="dashed"
         fillOpacity={0.15}
@@ -264,10 +265,10 @@ function OpenIntersect({ windowSize, stepIndex, isPanelOpen, sceneKey }) {
 
       <Polygon
         points={[
-          [-0.8,-1.6],
-          [0.8,-1.6],
-          [0.8,0],
-          [-0.8,0]
+          [-0.8,-0.8],
+          [0.8,-0.8],
+          [0.8,0.8],
+          [-0.8,0.8]
         ]}
         strokeStyle='dashed'
         color={colors.orange}

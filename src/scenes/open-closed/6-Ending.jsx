@@ -28,7 +28,7 @@ export const SceneConfig = {
     $A^c$. This neighborhood includes $x$, so $x$ must be an element of $A^c$. $$$$ For $x$ to be a limit point of $A$, every neighborhood\
     of $x$ would have to contain at least one point of $A$. Since this neighborhood does not, $x$ is not a limit point.",
     "TOP: Finally, we'll see what happens for boundary points. This is the scenario where there are the most possibilities: a boundary\
-    point could be both and element and limit point, just an element, or just a limit point, as these three examples show.",
+    point could be both an element and limit point, just an element, or just a limit point, as these three examples show.",
     "TOP: We _can_ make one conclusion, however. If $x$ is a boundary point of $A$, one half of the definition is that every\
     neighborhood of $x$ must contain an element of $A$.",
     "TOP: If $x$ is an element of $A$, then this always the case, since every neighborhood of $x$ contains $x$ itself.",
@@ -54,8 +54,9 @@ export const SceneConfig = {
     only of interior points. $$$$ We have also proven the equivalence of _three_ definitions for closed sets: sets containing their\
     boundaries, sets whose complements are open, and sets containing all of their limit points.",
     "With the end of this section, we have finished covering the fundamentals of metric spaces. You should make\
-    sure you have a solid grasp of these ideas, as we are about to push them to their limits. $$$$ The next section takes us deeper\
-    into the world of infinity. You'll be suprised by how completely intuitive facts _break_ in the infinite setting."
+    sure you have a solid grasp of these ideas, as we are about to push them to their limits.",
+    "The next section takes us deeper into the world of infinity. You'll be suprised by how completely intuitive facts _break_ in\
+    the infinite setting."
   ]
 }
 

@@ -28,8 +28,8 @@ export const SceneConfig = {
     "TOP: You can also drag the screen around and scroll to zoom in or out.",
     "Now that you've gotten to think about some examples, we can begin to explore the precise definition of a metric space.\
     $$$$ A metric space has two parts: a _set,_ and a _metric._ In order to truly understand metric spaces, we will take\
-    a look at each of these two parts. $$$$ In the next lesson, we'll begin by looking at _sets._ To proceed, open the menu\
-    in the upper-left corner of the screen."
+    a look at each of these two parts.",
+    "In the next lesson, we'll begin by looking at _sets._ To proceed, open the menu in the upper-left corner of the screen."
   ]
 }
 

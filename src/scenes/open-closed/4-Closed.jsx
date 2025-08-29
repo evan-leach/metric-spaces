@@ -51,8 +51,8 @@ export const SceneConfig = {
     _every set_ is both open and closed. $$$$ Explaining why this is the case is another good challenge.",
     "We have now throughly explored the concepts of open and closed sets. We even have two equivalent definitions of a closed\
     set: a set containing its entire boundary, and a set whose complement is open. $$$$ It turns out that there's a _third_\
-    equivalent definition of a closed set, and this third definition will mark the conclusion of this section. $$$$\
-    There's just one more concept we need to introduce first, and we might run into _infinity_ along the way."
+    equivalent definition of a closed set, and this third definition will mark the conclusion of this section.",
+    "There's just one more concept we need to introduce first, and we might run into _infinity_ along the way."
   ]
 }
 

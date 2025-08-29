@@ -53,8 +53,8 @@ export const SceneConfig = {
     is _exactly_ $2$.",
     "This concludes our introduction! $$$$ In the next sections, we will stick to visualizing our metric spaces using the standard\
     Euclidean metric. Balls will be round, just like you're used to. However, you should keep in mind that all the concepts we will\
-    develop work in _any_ metric space. $$$$\
-    In the next section, we will learn about open and closed sets. These are two special kinds of sets that form the foundation\
+    develop work in _any_ metric space.",
+    "In the next section, we will learn about open and closed sets. These are two special kinds of sets that form the foundation\
     for the study of metric spaces. We will learn about insides, outsides, and boundaries, and we will even take our first\
     serious look at infinity."
   ]

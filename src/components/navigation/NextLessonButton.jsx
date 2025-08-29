@@ -44,7 +44,7 @@ function NextLessonButton({
   return (
     <div style={{
       position: 'fixed',
-      bottom: '120px',
+      bottom: '110px',
       left: isPanelOpen ? 'calc(50% + 150px)' : '50%',
       transform: 'translateX(-50%)',
       transition: 'left 0.3s ease-in-out',
