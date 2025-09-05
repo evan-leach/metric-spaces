@@ -142,8 +142,6 @@ function Scene({ windowSize, stepIndex, isPanelOpen, sceneKey }) {
           { type: 'circle', center: [2, -0.5], radius: currentRadius }
         ]}
         color={colors.green}
-        fillOpacity={0.4}
-        strokeOpacity={0.8}
         startFrame={3}
         endFrame={3}
         stepIndex={stepIndex}
@@ -155,8 +153,6 @@ function Scene({ windowSize, stepIndex, isPanelOpen, sceneKey }) {
           { type: 'circle', center: [2, -0.5], radius: currentRadius }
         ]}
         color={colors.red}
-        fillOpacity={0.4}
-        strokeOpacity={0.8}
         startFrame={4}
         endFrame={4}
         stepIndex={stepIndex}

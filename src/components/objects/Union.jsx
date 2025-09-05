@@ -5,10 +5,11 @@ import { colors } from '../../config/colors'
 function Union({
   shapes = [],
   color = colors.blue,
-  fillOpacity = 0.3,
+  fillOpacity = 0.4,
   strokeOpacity = 0.8,
   weight = 2,
   style = 'solid',
+  invert = false,
   minSamplingDepth = 12,
   maxSamplingDepth = 16,
   startFrame = null,
@@ -19,6 +20,7 @@ function Union({
   return (
     <BooleanRegion
       operation="union"
+      invert={invert}
       shapes={shapes}
       color={color}
       fillOpacity={fillOpacity}

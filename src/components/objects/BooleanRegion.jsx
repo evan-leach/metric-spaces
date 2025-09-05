@@ -31,6 +31,7 @@ function BooleanRegion({
   // sampling controls
   minSamplingDepth = 12,
   maxSamplingDepth = 16,
+  invert = false,
   // animation/visibility
   startFrame = null,
   endFrame = null,
@@ -109,11 +110,23 @@ function BooleanRegion({
   const resultMultiPolygon = useMemo(() => {
     if (!inputPolygons || inputPolygons.length < 2) return []
     try {
+      let result
       if (operation === 'intersection') {
-        return polygonClipping.intersection(...inputPolygons)
+        result = polygonClipping.intersection(...inputPolygons)
+      } else {
+        result = polygonClipping.union(...inputPolygons)
       }
-      // default to union
-      return polygonClipping.union(...inputPolygons)
+      if (invert) {
+        const bigBox = [[
+          [-100000, -100000],
+          [100000, -100000],
+          [100000, 100000],
+          [-100000, 100000],
+          [-100000, -100000]
+        ]]
+        result = polygonClipping.difference([bigBox], ...inputPolygons)
+      }
+      return result
     } catch (e) {
       // In case of robust-geom failures, return empty
       return []

@@ -1,13 +1,9 @@
 import { useMemo } from 'react'
 import BaseScene from '../../components/BaseScene'
 import { colors } from '../../config/colors'
-import Intersection from '../../components/objects/Intersection'
 import Circle from '../../components/objects/Circle'
 import Point from '../../components/objects/Point'
 import Blob from '../../components/objects/Blob'
-import InequalityPlot from '../../components/objects/InequalityPlot'
-import Polygon from '../../components/objects/Polygon'
-import { useKeyframeAnimation } from '../../hooks/useKeyframeAnimation'
 
 export const SceneConfig = {
   steps: [
