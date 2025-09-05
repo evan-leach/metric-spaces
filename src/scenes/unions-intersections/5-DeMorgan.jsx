@@ -24,15 +24,15 @@ export const SceneConfig = {
     general fact using the equation $$(A \\cup B)^c = A^c \\cap B^c \\text{.}$$",
     "TOP: This same argument works for _any_ collection of sets, even if the collection is infinite. Take a look at this\
     example and convince yourself that a point $x$ is _not_ in the union if and only if it is in _all_ of the complements.",
-    "Now we've seen what happens for a union of sets. What about intersections?",
-    "TOP: If a point $x$ does _not_ lie in $A \\cap B$, this means that it is not an element of at least one of these sets.",
+    "TOP: Now let's see what happens for intersections. $$$$If a point $x$ does _not_ lie in $A \\cap B$, this means that it\
+    is not an element of at least one of these sets.",
     "TOP: In other words, $x$ lies in either $A^c$ or $B^c$, so it is an element of $A^c \\cup B^c$. We can again write\
     this general fact using the equation $$(A \\cap B)^c = A^c \\cup B^c \\text{.}$$",
-    "TOP: We can do the same exact this for infinite collections. A point $x$ does not simultaneously lie in all of the sets\
-    if and only if it lies in at least one of the complements.",
+    "TOP: We can do the same exact thing for larger (even infinite) collections of sets. A point $x$ does not simultaneously\
+    lie in all of the sets if and only if it lies in at least one of the complements.",
     "The equations $$\\left(A_1 \\cup A_2 \\cup A_3 \\cup \\cdots\\right)^c = A_1^c \\cap A_2^c \\cap A_3^c \\cap \\cdots$$ and\
     $$\\left(A_1 \\cap A_2 \\cap A_3 \\cap\\\cdots\\right)^c = A_1^c \\cup A_2^c \\cup A_3^c \\cup \\cdots$$ are called\
-    *De Morgan's laws.*",
+    *De Morgan's laws.* They summarize the observations we've just made about how complements interact with unions and intersections.",
     "Now we have what we need to answer our two questions about closed sets. To begin, we'll consider a _finite union_ of\
     closed sets $A_1 \\cup A_2 \\cup \\cdots \\cup A_n$. Instead of trying to figure out whether this union is closed,\
     we'll look at its complement.",
@@ -40,12 +40,11 @@ export const SceneConfig = {
     \\text{.}$$",
     "TOP: Since the sets $A_1^c$, $A_2^c, \\dots, A_n^c$ are complements of closed sets, they are all open. $$$$ This means that\
     $A_1^c \\cap A_2^c \\cap \\cdots \\cap A_n^c$ is a finite intersection of open sets, which we proved is open!",
-    "TOP: Since the complement of $A_1 \\cup A_2 \\cup \\cdots \\cup A_n$ is open, we know that $A_1 \\cup A_2 \\cup \
+    "TOP: Since the complement of $A_1 \\cup A_2 \\cup \\cdots \\cup A_n$ is open, this means that $A_1 \\cup A_2 \\cup \
     \\cdots \\cup A_n$ is closed. $$$$ This proves the answer to our third question: _finite_ unions of closed sets are closed.",
-    "TOP: Finally, let's consider a (possibly infinite) intersection $$A_1 \\cap A_2 \\cap A_3 \\cap \\dots$$ of closed sets.",
+    "TOP: Finally, let's consider a (possibly infinite) intersection $$A_1 \\cap A_2 \\cap A_3 \\cap \\cdots$$ of closed sets.",
     "TOP: By De Morgan's law, the complement of this intersection is equal to $$A_1^c \\cup A_2^c \\cup A_3^c \\cup \\cdots\
-    \\text{,}$$ which is a union of open sets. Because of our previous result about unions of open sets, we know that this set\
-    is open!",
+    \\text{,}$$ which is a union of open sets. That means that this set is open!",
     "TOP: Since the complement of $A_1 \\cap A_2 \\cap A_3 \\cap \\cdots$ is open, this set is closed. $$$$ This answers our\
     fourth and final question: intersections of closed sets are closed.",
     "To summarize, closed sets stay closed when we take finite unions and intersections, just how open sets stay open when\

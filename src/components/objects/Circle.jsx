@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react'
 import { Circle as MafsCircle, Point as MafsPoint } from 'mafs'
 import { useKeyframeAnimation } from '../../hooks/useKeyframeAnimation'
+import { useFrameBasedOpacity } from '../../hooks/useFrameBasedOpacity'
 import Label from '../canvas/Label'
 import { colors } from '../../config/colors'
 import { ANIMATION_THRESHOLD } from '../../constants/animations'
@@ -35,6 +36,8 @@ function Circle({
   center = [0, 0],
   keyframes = {},
   stepIndex = 0,
+  startFrame = null,
+  endFrame = null,
   color = colors.blue,
   fillOpacity = 0.1,
   strokeOpacity = 0.5,
@@ -53,6 +56,9 @@ function Circle({
   animationThresholdMultiplier = 1,
   radiusScale = 1
 }) {
+  // Use the same frame-based opacity logic as Point.jsx (on top of existing opacity handling)
+  const currentOpacity = useFrameBasedOpacity(startFrame, endFrame, stepIndex)
+
   // Generate opacity keyframes based on radius keyframes
   const enhancedKeyframes = useMemo(() => {
     const result = { ...keyframes }
@@ -76,8 +82,8 @@ function Circle({
   const animatedProps = useKeyframeAnimation(enhancedKeyframes, stepIndex,{ threshold: ANIMATION_THRESHOLD * animationThresholdMultiplier })
   
   // Extract animated properties with defaults
-  const radius = animatedProps.radius ?? 0
-  const opacity = animatedProps.opacity ?? 1
+  const radius = (animatedProps.radius ?? 0) * radiusScale
+  const opacity = (animatedProps.opacity ?? 1) * currentOpacity
   
   // Don't render if radius is 0 or negative
   if (radius <= 0) {
@@ -100,7 +106,7 @@ function Circle({
     <>
       <MafsCircle
         center={center}
-        radius={radius * radiusScale}
+        radius={radius}
         color={color}
         fillOpacity={fillOpacity * opacity}
         strokeOpacity={strokeOpacity * opacity}
@@ -118,7 +124,7 @@ function Circle({
       {labelContext && labelPosition && (
         <Label
           labelContext={labelContext}
-          labelContextArgs={[center, radius * radiusScale]}
+          labelContextArgs={[center, radius]}
           position={labelPosition}
           attach={labelAttach}
           attachDistance={labelAttachDistance}

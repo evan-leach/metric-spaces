@@ -54,7 +54,7 @@ function OpenIntersect({ windowSize, stepIndex, isPanelOpen, sceneKey }) {
   const neighborhood2Keyframes = useMemo(() => ({
     radius: {
       5: 0,
-      6: 0.37,
+      6: 0.39,
       9: 0
     }
   }), [])

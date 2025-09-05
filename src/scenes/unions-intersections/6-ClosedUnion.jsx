@@ -14,8 +14,8 @@ export const SceneConfig = {
     "When we previous showed that not all infinite intersections of open sets are open, we had to carefully construct\
     a collection of open sets and prove that the intersection was not open. $$$$ Now it's time for a far more\
     _dramatic_ approach.",
-    "TOP: This set $S_x$ contains just a single point, which we'll call $x$. We call such a set a *singleton.*",
-    "TOP: This set has at most one boundary point, which is $x$ itself. Since $S_x$ contains all of its boundary, it is a closed set.",
+    "TOP: This set $S_x$ contains just a single point, which we'll call $x$. We call such a set a *singleton.* $$$$ Take a moment to\
+    convince yourself that this singleton contains all of its boundary points and is therefore _closed._",
     "TOP: Here's the key observation: _every_ set can be written as a union of singletons. $$$$ In particular, any set $A$ is the\
     union of the singletons $S_x$ for each $x$ in $A$.",
     "TOP: We just saw that singletons are closed, so _every_ set $A$ is a union of closed sets.",

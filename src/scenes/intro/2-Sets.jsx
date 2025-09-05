@@ -75,7 +75,6 @@ function Sets({
     }
   }
 
-  // Use keyframe animation for color
   const animatedProps = useKeyframeAnimation(colorKeyframes, stepIndex)
   const specialPointColor = animatedProps.color || colors.red
 
