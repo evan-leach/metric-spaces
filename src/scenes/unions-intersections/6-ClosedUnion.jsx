@@ -31,8 +31,8 @@ export const SceneConfig = {
     just asking for trouble.",
     "The only solution is to _harness the infinite._ We need to find a way to work with infinite sets while still maintaining some control.",
     "The key is to consider a new type of set which can be infinite, but is \"sort of\" finite. We call these sets _compact._",
-    "We will spend the rest of our time in this exploration grappling with the concept of compactness. It will be a little more challenging\
-    than what we've done so far, but the shocking and beautiful results we discover will be worth it."
+    "We will spend the rest of our time in this exploration grappling with the concept of compactness. It will take a while to uncover\
+    the complete picture, but the shocking and beautiful results we discover will be worth it."
   ]
 }
 
