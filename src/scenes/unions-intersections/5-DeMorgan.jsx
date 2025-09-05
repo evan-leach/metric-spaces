@@ -44,7 +44,7 @@ export const SceneConfig = {
     "TOP: By De Morgan's law, the complement of this intersection is equal to $$A_1^c \\cup A_2^c \\cup A_3^c \\cup \\cdots\
     \\text{,}$$ which is a union of open sets. That means that this set is open!",
     "TOP: Since the complement of $A_1 \\cap A_2 \\cap A_3 \\cap \\cdots$ is open, this set is closed. $$$$ This answers our\
-    last question: intersections of closed sets are closed.",
+    last question: intersections of closed sets, infinite or not, are closed.",
     "To summarize, closed sets stay closed when we take finite unions and intersections, just how open sets stay open when\
     we take unions and finite intersections. $$$$ We have answered all four of our original questions!",
     "There's one last thing we haven't seen the analogue for yet: $$$$ We know that an infinite intersection of open sets\

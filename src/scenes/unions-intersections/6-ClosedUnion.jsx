@@ -53,7 +53,7 @@ function ClosedUnion({ windowSize, stepIndex, isPanelOpen, sceneKey }) {
       windowSize={windowSize}
     >
       <Point
-        center={[0,0]}
+        center={[0,-1]}
         color={colors.orange}
         stepIndex={stepIndex}
         startFrame={0}
@@ -84,6 +84,7 @@ function ClosedUnion({ windowSize, stepIndex, isPanelOpen, sceneKey }) {
 
       <ConstrainedMovablePoint
         center={[0,0]}
+        initialPosition={[0, -0.2]}
         startFrame={3}
         endFrame={4}
         stepIndex={stepIndex}
@@ -92,7 +93,6 @@ function ClosedUnion({ windowSize, stepIndex, isPanelOpen, sceneKey }) {
         labelAttachDistance={30}
         constraintFunction={getBlobRadius}
         marginPixels={0}
-        initialPosition={[0, 0.5]}
         color={colors.orange}
       />
     </BaseScene>
