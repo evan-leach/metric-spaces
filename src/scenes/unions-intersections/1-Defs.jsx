@@ -258,7 +258,6 @@ function Defs({ windowSize, stepIndex, isPanelOpen, sceneKey }) {
         stepIndex={stepIndex}
       />
 
-      {/* Render circles 2-200 in reverse order (300 in back, 2 in front) */}
       {Array.from({ length: 199 }, (_, i) => {
         const n = 200 - i; // Start from 200, go down to 2
         const fillOpacity = Math.pow(0.03, (n + 150) / 150);

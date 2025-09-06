@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react'
+import { useState, useMemo } from 'react'
 import BaseScene from '../../components/BaseScene'
 import TaxicabDistance from '../../components/intro/TaxicabDistance'
 import DisplayOverlay from '../../components/text/DisplayOverlay'

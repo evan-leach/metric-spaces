@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import BaseScene from '../../components/BaseScene'
 import Distance from '../../components/intro/Distance'
 import TriangleInequality from '../../components/intro/TriangleInequality'

@@ -1,4 +1,3 @@
-import React from 'react'
 import BaseScene from '../../components/BaseScene'
 import Blob from '../../components/objects/Blob'
 import Point from '../../components/objects/Point'

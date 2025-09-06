@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react'
+import { useMemo, useState } from 'react'
 import BaseScene from '../../components/BaseScene'
 import Point from '../../components/objects/Point'
 import Circle from '../../components/objects/Circle'

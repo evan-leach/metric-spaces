@@ -35,8 +35,20 @@ export const sidebarConfig = [
     ]
   },
   {
-    title: 'Coming Soon: Compactness',
+    title: 'Compactness',
     folder: 'compactness',
+    buttons: [
+      { text: 'Covers and subcovers', scene: '1-Covers' },
+      { text: 'Compact sets', scene: '2-Compactness' },
+      { text: 'Compact sets are bounded', scene: null },
+      { text: 'Compact sets are closed', scene: null },
+      { text: 'Sequential compactness', scene: null },
+      { text: 'The Venn diagram of finite sets', scene: null }
+    ]
+  },
+  {
+    title: 'Coming Soon: Which Sets are Compact?',
+    folder: '',
     buttons: []
   }
 ] 

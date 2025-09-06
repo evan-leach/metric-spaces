@@ -1,4 +1,3 @@
-import React from 'react'
 import BaseScene from '../../components/BaseScene'
 import Distance from '../../components/intro/Distance'
 import { colors } from '../../config/colors'

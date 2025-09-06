@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react'
+import { useMemo } from 'react'
 import BaseScene from '../../components/BaseScene'
 import Blob from '../../components/objects/Blob'
 import Point from '../../components/objects/Point'
@@ -11,7 +11,7 @@ export const SceneConfig = {
     "TOP: Every subset $A$ of a metric space partitions the space into two types of points: those in the set, and those not in the set. Not all elements of a set are\
     created equal, though. We need to be more specific.",
     "TOP: For example, this point lies in the _interior_ of the set...",
-    "TOP: ...while this point lies on the _boundary_ of the set.",
+    "TOP: ...while this point lies on the _boundary_ of the set. $$$$ (Note that $A$ consists of all the blobs and the three points to the left, not just the center blob.)",
     "The key challenge is figuring out what these words actually mean. Take a moment to try and define them yourself, and you'll realize it's harder than you think!\
     $$$$ For example, you might guess that a point lies on the boundary of a set if it is touching both the set and its complement. But what does\
     \"touching\" mean here? $$$$ Fortunately, we have already developed the tool we need to craft a precise definition: neighborhoods.",

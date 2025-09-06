@@ -1,4 +1,4 @@
-import React, { useMemo, useRef, useState } from 'react'
+import { useMemo, useState } from 'react'
 import BaseScene from '../../components/BaseScene'
 import Blob, { generateHarmonics, createBlobRadiusFunction } from '../../components/objects/Blob'
 import InteriorPoint from '../../components/objects/InteriorPoint'
@@ -29,7 +29,7 @@ export const SceneConfig = {
     "Even if open sets don't exist in the real world, they are plentiful in mathematics. In fact, we have already discovered a\
     large class of open sets: neighborhoods.",
     "It turns out that _every_ neighborhood is open. $$$$ Since we've used dashed lines to represent both neighborhoods and open sets,\
-    we've already hinted at this fact. It's not quite clear _why_ though. All we know about a neighborhood $N_r(x)$ is that it's the set\
+    we've already hinted at this fact. It's not quite clear _why,_ though. All we know about a neighborhood $N_r(x)$ is that it's the set\
     of all points $y$ such that $d(x,y) < r$. Why would this guarantee that every point in $N_r(x)$ is an interior point?",
     "TOP: Let's consider the neighborhood $N_3(x)$ for some point $x$ in the coordinate plane. We will _prove_ that this set is open,\
     and although there are of course neighborhoods with radii other than $3$, the argument is the same for any radius.",
@@ -45,9 +45,8 @@ export const SceneConfig = {
     we need to show that _every_ point $z$ in $N_t(y)$ is also an element of $N_3(x)$. $$$$ In other words, we need to show that\
     if $d(y,z) < t$, then $d(x,z) < 3$.",
     "TOP: The triangle inequality is what we need here. As a reminder, it says that $$d(x,z) \\leq d(x,y) + d(y,z) \\text{.}$$\
-    We already know that $d(x,y) = s$. This means that if $d(y,z) < t$, then $$d(x,y) + d(y,z) < s + t = 3 \\text{.}$$",
-    "TOP: We can put these two inequalities together to get $$d(x,z) \\leq d(x,y) + d(y,z) < 3\\text{.}$$ This means that\
-    $d(x,z) < 3$ whenever $d(y,z) < t$, which is exactly what we wanted to prove! It shows that _every_ point $z$ in $N_t(y)$\
+    We already know that $d(x,y) = s$. This means that if $d(y,z) < t$, then $$d(x,z) \\leq d(x,y) + d(y,z) < s + t = 3 \\text{.}$$",
+    "TOP: This is exactly what we wanted to prove! It shows that _every_ point $z$ in $N_t(y)$\
     must also lie in $N_3(x)$. Thus $N_t(y)$ is a subset of $N_3(x)$, so $y$ is an interior point.",
     "TOP: You can see that this argument works for any point $y$ in $N_3(x)$, which means that $N_3(x)$ contains only interior points.\
     This is exactly what it means for $N_3(x)$ to be open.",
@@ -192,9 +191,9 @@ function Open({
         startFrame={14}
         endFrame={15}
         stepIndex={stepIndex}
-        distanceLabelFormat={() => `$d(x,z) < s + t$`}
+        distanceLabelFormat={() => `$d(x,z) < 3$`}
         labelAttach="nw"
-        labelAttachDistance={55}
+        labelAttachDistance={50}
       />
 
       <Point
