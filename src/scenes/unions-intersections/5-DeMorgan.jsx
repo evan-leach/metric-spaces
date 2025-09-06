@@ -43,7 +43,7 @@ export const SceneConfig = {
     "TOP: Since the complement of $A_1 \\cup A_2 \\cup \\cdots \\cup A_n$ is open, this means that $A_1 \\cup A_2 \\cup \
     \\cdots \\cup A_n$ is closed. $$$$ This proves the answer to our third question: _finite_ unions of closed sets are closed.",
     "TOP: Finally, let's consider a (possibly infinite) intersection $$A_1 \\cap A_2 \\cap A_3 \\cap \\cdots$$ of closed sets.",
-    "TOP: By De Morgan's law, the complement of this intersection is equal to $$A_1^c \\cup A_2^c \\cup A_3^c \\cup \\cdots\
+    "TOP: By one of De Morgan's laws, the complement of this intersection is equal to $$A_1^c \\cup A_2^c \\cup A_3^c \\cup \\cdots\
     \\text{.}$$ This is a union of open sets, which we proved is open.",
     "TOP: Since the complement of $A_1 \\cap A_2 \\cap A_3 \\cap \\cdots$ is open, this set is closed. $$$$ This answers our\
     last question: intersections of closed sets, infinite or not, are closed.",
@@ -51,8 +51,8 @@ export const SceneConfig = {
     we take unions and finite intersections. $$$$ We have answered all four of our original questions!",
     "There's one last thing we haven't seen the analogue for yet: $$$$ We know that an infinite intersection of open sets\
     might not be open. Can we find a similar example for infinite unions of closed sets?",
-    "We can actually do a whole lot better; examples of this phenomenon are _everywhere._ In fact, every single non-closed\
-    set we've seen so far is an example! We'll find out why in the next lesson, which is the last in this section."
+    "We can actually do a whole lot better; examples of this phenomenon are _everywhere._ Every single non-closed\
+    set we've seen so far is an example! We'll find out why in the conclusion of this section."
   ]
 }
 

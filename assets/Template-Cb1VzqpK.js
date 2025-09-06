@@ -1,1 +1,0 @@
-import{j as n}from"./index-DPhrVpl3.js";import{B as r}from"./BaseScene-10FBJgvW.js";const a={steps:["Steps"]};function f({windowSize:e,stepIndex:t,isPanelOpen:s,sceneKey:o}){return n.jsx(r,{config:a,sceneKey:o,stepIndex:t,isPanelOpen:s,windowSize:e})}export{a as SceneConfig,f as default};
