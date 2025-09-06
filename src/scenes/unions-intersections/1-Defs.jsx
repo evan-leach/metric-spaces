@@ -44,7 +44,7 @@ export const SceneConfig = {
   ]
 }
 
-function Scene({ windowSize, stepIndex, isPanelOpen, sceneKey }) {
+function Defs({ windowSize, stepIndex, isPanelOpen, sceneKey }) {
   // Refs for movable points
   const blob1PointRef = useRef()
   const blob2PointRef = useRef()
@@ -295,5 +295,5 @@ function Scene({ windowSize, stepIndex, isPanelOpen, sceneKey }) {
   )
 }
 
-export default Scene
+export default Defs
 

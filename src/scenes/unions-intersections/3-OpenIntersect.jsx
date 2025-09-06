@@ -10,6 +10,7 @@ import Polygon from '../../components/objects/Polygon'
 import { useKeyframeAnimation } from '../../hooks/useKeyframeAnimation'
 
 export const SceneConfig = {
+  zoom: { min: 0.2, max: 100 },
   steps: [
     "Our strategy for this proof is similar to the last one. We will consider an arbitrary finite collection of open\
     sets, take an arbitrary point in the intersection, and try to find a neighborhood of that point that lies entirely\

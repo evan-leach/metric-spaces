@@ -8,16 +8,19 @@ import Blob from '../../components/objects/Blob'
 import { useKeyframeAnimation } from '../../hooks/useKeyframeAnimation'
 
 export const SceneConfig = {
+  zoom: { min: 0.2, max: 100 },
   steps: [
     "When we first explored the concept of closed sets, we proved the following two facts: $$$$\
     1. A set is open if and only if its complement is closed. $$$$ 2. A set is closed if and only if its complement is open.",
     "We can use this fact to answer our next two questions about unions and intersections of closed sets. Instead of\
-    examining the closed sets directly, we'll look at their _complements._ $$$$ To do this, we'll need to see how\
-    unions and intersections interact with complements.",
+    examining the closed sets directly, we'll look at their _complements._ $$$$ To do this, we'll need to see how complements\
+    interact with unions and intersections.",
     "TOP: Suppose we have two sets $A$ and $B$. If a point $x$ lies in $A \\cup B$, this means that it lies in at least\
     one of these sets.",
     "TOP: What if a point does _not_ lie in $A \\cup B$? This means that it is not an element of _either_ set, so it is\
-    an element of both $A^c$ and $B^c$.",
+    an element of both $A^c$...",
+    "TOP: ...and $B^c$. $$$$ Notice that points in the lighter purple lie in just one of the complements, while points in the\
+    darker purple lie in both complements simultaneously.",
     "TOP: In other words, a point is _not_ in $A \\cup B$ _if and only if_ it is in $A^c \\cap B^c$. We can write this\
     general fact using the equation $$(A \\cup B)^c = A^c \\cap B^c \\text{.}$$",
     "This same argument works for _any_ collection of sets, even if the collection is infinite. It just boils down to the fact\
@@ -33,16 +36,15 @@ export const SceneConfig = {
     *De Morgan's laws.* They summarize the observations we've just made about how complements interact with unions and intersections.",
     "TOP: Now we have what we need to answer our two questions about closed sets. To begin, we'll consider a _finite union_ of\
     closed sets $A_1 \\cup A_2 \\cup \\cdots \\cup A_n$.",
-    "TOP: Instead of trying to figure out whether this union is closed, we'll look at its complement.",
-    "TOP: By De Morgan's law, the complement of this union is equal to $$A_1^c \\cap A_2^c \\cap \\cdots \\cap A_n^c\
-    \\text{.}$$",
-    "TOP: Since the sets $A_1^c$, $A_2^c, \\dots, A_n^c$ are complements of closed sets, they are all open. $$$$ This means that\
-    $A_1^c \\cap A_2^c \\cap \\cdots \\cap A_n^c$ is a finite intersection of open sets, which we proved is open!",
+    "TOP: Instead of working with these sets directly, we'll look at their complements $A_1^c$, $A_2^c, \\dots, A_n^c$. $$$$\
+    Since these are complements of closed sets, they are all open.",
+    "TOP: The complement of the entire closed union is equal to $$A_1^c \\cap A_2^c \\cap \\cdots \\cap A_n^c$$ by one of\
+    De Morgan's laws. $$$$ This is a finite intersection of open sets, which we proved is open!",
     "TOP: Since the complement of $A_1 \\cup A_2 \\cup \\cdots \\cup A_n$ is open, this means that $A_1 \\cup A_2 \\cup \
     \\cdots \\cup A_n$ is closed. $$$$ This proves the answer to our third question: _finite_ unions of closed sets are closed.",
     "TOP: Finally, let's consider a (possibly infinite) intersection $$A_1 \\cap A_2 \\cap A_3 \\cap \\cdots$$ of closed sets.",
     "TOP: By De Morgan's law, the complement of this intersection is equal to $$A_1^c \\cup A_2^c \\cup A_3^c \\cup \\cdots\
-    \\text{,}$$ which is a union of open sets. That means that this set is open!",
+    \\text{.}$$ This is a union of open sets, which we proved is open.",
     "TOP: Since the complement of $A_1 \\cap A_2 \\cap A_3 \\cap \\cdots$ is open, this set is closed. $$$$ This answers our\
     last question: intersections of closed sets, infinite or not, are closed.",
     "To summarize, closed sets stay closed when we take finite unions and intersections, just how open sets stay open when\
@@ -59,7 +61,7 @@ function DeMorgan({ windowSize, stepIndex, isPanelOpen, sceneKey }) {
   const circlesKeyframes = useMemo(() => ({
     radius: {
       0: 3,
-      9: 0
+      10: 0
     }
   }), [])
 
@@ -129,7 +131,7 @@ function DeMorgan({ windowSize, stepIndex, isPanelOpen, sceneKey }) {
         invert={true}
         style="dashed"
         startFrame={4}
-        endFrame={5}
+        endFrame={6}
         stepIndex={stepIndex}
       />
       <Union
@@ -141,8 +143,8 @@ function DeMorgan({ windowSize, stepIndex, isPanelOpen, sceneKey }) {
         fillOpacity={0.2}
         invert={true}
         style="dashed"
-        startFrame={4}
-        endFrame={5}
+        startFrame={5}
+        endFrame={6}
         stepIndex={stepIndex}
       />
       <Circle
@@ -155,9 +157,9 @@ function DeMorgan({ windowSize, stepIndex, isPanelOpen, sceneKey }) {
         showCenterPoint={false}
         labelContext={() => `$A^c$`}
         labelAttach='n'
-        labelAttachDistance={-30}
+        labelAttachDistance={25}
         startFrame={4}
-        endFrame={5}
+        endFrame={6}
       />
       <Circle
         center={[2,-0.5]}
@@ -169,9 +171,9 @@ function DeMorgan({ windowSize, stepIndex, isPanelOpen, sceneKey }) {
         showCenterPoint={false}
         labelContext={() => `$B^c$`}
         labelAttach='n'
-        labelAttachDistance={-30}
-        startFrame={4}
-        endFrame={5}
+        labelAttachDistance={25}
+        startFrame={5}
+        endFrame={6}
       />
       <Union
         shapes={[
@@ -181,8 +183,8 @@ function DeMorgan({ windowSize, stepIndex, isPanelOpen, sceneKey }) {
         color={colors.red}
         invert={true}
         style="dashed"
-        startFrame={5}
-        endFrame={5}
+        startFrame={6}
+        endFrame={6}
         stepIndex={stepIndex}
       />
       <Circle
@@ -195,9 +197,9 @@ function DeMorgan({ windowSize, stepIndex, isPanelOpen, sceneKey }) {
         showCenterPoint={false}
         labelContext={() => `$A^c \\cap B^c$`}
         labelAttach='e'
-        labelAttachDistance={-55}
-        startFrame={5}
-        endFrame={5}
+        labelAttachDistance={55}
+        startFrame={6}
+        endFrame={6}
       />
 
       <Intersection
@@ -206,8 +208,8 @@ function DeMorgan({ windowSize, stepIndex, isPanelOpen, sceneKey }) {
           { type: 'circle', center: [2, -0.5], radius: currentRadius }
         ]}
         color={colors.red}
-        startFrame={7}
-        endFrame={7}
+        startFrame={8}
+        endFrame={8}
         stepIndex={stepIndex}
       />
 
@@ -220,8 +222,8 @@ function DeMorgan({ windowSize, stepIndex, isPanelOpen, sceneKey }) {
         fillOpacity={0.2}
         invert={true}
         style="dashed"
-        startFrame={8}
-        endFrame={8}
+        startFrame={9}
+        endFrame={9}
         stepIndex={stepIndex}
       />
       <Union
@@ -233,8 +235,8 @@ function DeMorgan({ windowSize, stepIndex, isPanelOpen, sceneKey }) {
         fillOpacity={0.2}
         invert={true}
         style="dashed"
-        startFrame={8}
-        endFrame={8}
+        startFrame={9}
+        endFrame={9}
         stepIndex={stepIndex}
       />
       <Circle
@@ -248,8 +250,8 @@ function DeMorgan({ windowSize, stepIndex, isPanelOpen, sceneKey }) {
         labelContext={() => `$A^c$`}
         labelAttach='n'
         labelAttachDistance={-30}
-        startFrame={8}
-        endFrame={8}
+        startFrame={9}
+        endFrame={9}
       />
       <Circle
         center={[2,-0.5]}
@@ -262,8 +264,8 @@ function DeMorgan({ windowSize, stepIndex, isPanelOpen, sceneKey }) {
         labelContext={() => `$B^c$`}
         labelAttach='n'
         labelAttachDistance={-30}
-        startFrame={8}
-        endFrame={8}
+        startFrame={9}
+        endFrame={9}
       />
 
       {blobs.map((blob, index) => (
@@ -275,7 +277,7 @@ function DeMorgan({ windowSize, stepIndex, isPanelOpen, sceneKey }) {
           color={colors.blue}
           fillOpacity={0.2}
           strokeOpacity={0.3}
-          startFrame={10}
+          startFrame={11}
           endFrame={18}
           stepIndex={stepIndex}
         />

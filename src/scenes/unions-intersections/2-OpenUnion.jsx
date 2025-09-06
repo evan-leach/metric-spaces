@@ -10,6 +10,7 @@ import InequalityPlot from '../../components/objects/InequalityPlot'
 import Polygon from '../../components/objects/Polygon'
 
 export const SceneConfig = {
+  zoom: { min: 0.2, max: 100 },
   steps: [
     "In this lesson, we will prove the first of our four claims: that the union of any collection of open sets is open.",
     "Remember that one of the equivalent definitions of an open set is that it is a set consisting of only interior points.\

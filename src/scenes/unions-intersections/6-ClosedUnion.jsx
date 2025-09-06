@@ -5,10 +5,11 @@ import ConstrainedMovablePoint from '../../components/objects/ConstrainedMovable
 import Point from '../../components/objects/Point'
 
 export const SceneConfig = {
+  zoom: { min: 0.2, max: 500 },
   steps: [
-    "When we previous showed that not all infinite intersections of open sets are open, we had to carefully construct\
+    "When we previously showed that not all infinite intersections of open sets are open, we had to carefully construct\
     a collection of open sets and prove that the intersection was not open. $$$$ Now it's time for a far more\
-    _dramatic_ approach.",
+    dramatic approach.",
     "TOP: This set $S_x$ contains just a single point $x$. We call such a set a *singleton.* $$$$ Take a moment to\
     convince yourself that this singleton contains all of its boundary points and is therefore _closed._",
     "TOP: Here's the key observation: _every_ set can be written as a union of singletons. $$$$ In particular, any set $A$ is the\
@@ -32,13 +33,13 @@ export const SceneConfig = {
     "The only solution is to _harness the infinite._ We need to find a way to work with infinite sets while still maintaining some control.",
     "The key is to consider a new type of set which can be infinite, but is \"sort of\" finite. We call these sets _compact._",
     "We will spend the rest of our time in this exploration grappling with the concept of compactness. It will take a while to uncover\
-    the complete picture, but the shocking and beautiful results we discover will be worth it."
+    the complete picture, but the surprising and beautiful results we discover will be worth it."
   ]
 }
 
 function ClosedUnion({ windowSize, stepIndex, isPanelOpen, sceneKey }) {
 
-  const blobSize = 4
+  const blobSize = 3
 
   const blobHarmonics = generateHarmonics(0.2, 999, blobSize)
 
@@ -64,6 +65,7 @@ function ClosedUnion({ windowSize, stepIndex, isPanelOpen, sceneKey }) {
       />
 
       <Blob
+        center={[0,-1]}
         size={blobSize}
         harmonics={blobHarmonics}
         color={colors.blue}
@@ -73,6 +75,7 @@ function ClosedUnion({ windowSize, stepIndex, isPanelOpen, sceneKey }) {
       />
 
       <Blob
+        center={[0,-1]}
         size={1.7}
         harmonicsConfig={{ scale: 0.3, seed: 314 }}
         color={colors.blue}
@@ -83,7 +86,7 @@ function ClosedUnion({ windowSize, stepIndex, isPanelOpen, sceneKey }) {
       />
 
       <ConstrainedMovablePoint
-        center={[0,0]}
+        center={[0,-1]}
         initialPosition={[0, -0.2]}
         startFrame={3}
         endFrame={4}

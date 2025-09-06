@@ -6,10 +6,11 @@ import Point from '../../components/objects/Point'
 import Blob from '../../components/objects/Blob'
 
 export const SceneConfig = {
+  zoom: { min: 0.2, max: 500 },
   steps: [
     "TOP: In the last proof, we chose an arbitrary point $x$ in our intersection and constructed a collection of\
     neighborhoods around it.",
-    "TOP: There's nothing stopping us from doing this for a intersection of infinitely many open sets. We end up with an\
+    "TOP: There's nothing stopping us from doing this for an intersection of infinitely many open sets. We end up with an\
     infinite collection of neighborhoods of $x$, each contained in one of the open sets.",
     "TOP: Last time, our final step was to chose the smallest neighborhood in the collection.\ In particular, we chose the\
     neighborhood with the smallest radius and saw that it was a subset of the intersection.",
@@ -23,8 +24,9 @@ export const SceneConfig = {
     $\\frac{1}{3}$, and so on.",
     "TOP: Since these sets are neighborhoods, they are open. $$$$ Also, the point $x$ itself lies in all of these sets, so it\
     is an element of the intersection.",
-    "TOP: Now let's consider an arbitrary neighborhood $N_r(x)$ of $x$.",
-    "TOP: No matter how small $N_r(x)$ is, its radius will be larger than one of the open sets $N_{1/k}(x)$ in our collection.\
+    "TOP: Now let's consider an arbitrary neighborhood $N_r(x)$ of $x$. $$$$ Be sure to zoom until you can see everything\
+    clearly.",
+    "TOP: No matter how small $N_r(x)$ is, it will be larger than one of the open sets $N_{1/k}(x)$ in our collection.\
     $$$$ Since the radii of these neighborhoods get closer and closer to $0$, we just need to look at a radius which is even\
     closer to $0$ than $r$.",
     "TOP: The neighborhood $N_r(x)$ is not a subset of $N_{1/k}(x)$, so it is not a subset of the intersection. ",

@@ -35,8 +35,8 @@ export const sidebarConfig = [
     ]
   },
   {
-    title: 'Coming soon: Compactness',
-    folder: 'none',
+    title: 'Coming Soon: Compactness',
+    folder: 'compactness',
     buttons: []
   }
 ] 
