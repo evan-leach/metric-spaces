@@ -40,8 +40,8 @@ export const sidebarConfig = [
     buttons: [
       { text: 'Covers and subcovers', scene: '1-Covers' },
       { text: 'Compact sets', scene: '2-Compactness' },
-      { text: 'Compact sets are bounded', scene: null },
-      { text: 'Compact sets are closed', scene: null },
+      { text: 'Compact sets are bounded', scene: '3-CompBounded' },
+      { text: 'Compact sets are closed', scene: '4-CompClosed' },
       { text: 'Sequential compactness', scene: null },
       { text: 'The Venn diagram of finite sets', scene: null }
     ]
