@@ -1,0 +1,1 @@
+import{j as n}from"./index-a-AuvGFK.js";import{B as r}from"./BaseScene-COp22Wts.js";const a={steps:["Steps"]};function f({windowSize:e,stepIndex:t,isPanelOpen:s,sceneKey:o}){return n.jsx(r,{config:a,sceneKey:o,stepIndex:t,isPanelOpen:s,windowSize:e})}export{a as SceneConfig,f as default};

@@ -41,13 +41,11 @@ export const sidebarConfig = [
       { text: 'Covers and subcovers', scene: '1-Covers' },
       { text: 'Compact sets', scene: '2-Compactness' },
       { text: 'Compact sets are bounded', scene: '3-CompBounded' },
-      { text: 'Compact sets are closed', scene: '4-CompClosed' },
-      { text: 'Sequential compactness', scene: null },
-      { text: 'The Venn diagram of finite sets', scene: null }
+      { text: 'Compact sets are closed', scene: '4-CompClosed' }
     ]
   },
   {
-    title: 'Coming Soon: Which Sets are Compact?',
+    title: 'More Coming Soon!',
     folder: '',
     buttons: []
   }
