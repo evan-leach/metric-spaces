@@ -6,6 +6,7 @@ import Blob from '../../components/objects/Blob'
 import Union from '../../components/objects/Union'
 import Point from '../../components/objects/Point'
 import Distance from '../../components/intro/Distance'
+import InequalityPlot from '../../components/objects/InequalityPlot'
 
 export const SceneConfig = {
   zoom: { min: 0.2, max: 100 },
@@ -18,8 +19,7 @@ export const SceneConfig = {
     "TOP: Let's consider an arbitrary point $x$ which does not lie in $K$. We'll take the same approach as before:\
     choosing an open cover, finding a finite subcover, and finally using some property of finite sets.",
     "TOP: Here is the first set $A_1$ in our open cover: the set of all points that are further than a distance of $1$\
-    away from $x$. We proved in a previous section that this set is open (we did this to show that its complement\
-    $B_1(x)$ is closed).",
+    away from $x$. We proved in a previous section that this set is open.",
     "TOP: The second set $A_2$ in our cover is the set of all points further than a distance of $\\frac{1}{2}$ away from\
     $x$.",
     "TOP: Repeating this process indefinitely, we get our infinite open cover.",
@@ -67,7 +67,17 @@ function CompClosed({ windowSize, stepIndex, isPanelOpen, sceneKey }) {
       isPanelOpen={isPanelOpen}
       windowSize={windowSize}
     >
-      
+      <InequalityPlot
+        y={1000000}
+        above={false}
+        color={colors.blue}
+        style="solid"
+        fillOpacity={0.25}
+        startFrame={6}
+        endFrame={10}
+        stepIndex={stepIndex}
+      />
+
       <Blob
         center={[0,-0.5]}
         size={2.3}
