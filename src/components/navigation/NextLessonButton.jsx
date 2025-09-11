@@ -67,7 +67,8 @@ function NextLessonButton({
             boxShadow: `0 6px 20px rgba(0, 0, 0, 0.15)`,
             transition: 'all 0.2s ease',
             outline: 'none',
-            minWidth: '240px'
+            minWidth: '240px',
+            pointerEvents: showButton ? 'auto' : 'none'
           }}
           onMouseEnter={(e) => {
             e.target.style.backgroundColor = '#3a8fa3' // Darker version of colors.blue

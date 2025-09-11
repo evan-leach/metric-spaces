@@ -12,13 +12,15 @@ export const SceneConfig = {
     "TOP: We begin this lesson with a new definition of an intuitive concept. $$$$ This set $A$ is infinite, but we can\
     at least fit all of its points on the screen.",
     "TOP: This set $B$, on the other hand, extends out forever. No matter how much we zoom out, we can never see it all.",
-    "TOP: Now zoom back in on $A$. We can capture the difference between these two sets by observing that $A$ can fit\
+    "TOP: We can capture the difference between these two sets by observing that $A$ can fit\
     within some neighborhood.",
-    "TOP: The set $B$, on the other hand, is not a subset of _any_ neighborhood. Zoom out to see this! $$$$ (Note that\
+    "TOP: The set $B$, on the other hand, is not a subset of _any_ neighborhood. $$$$ (Note that\
     we don't allow the radius of a neighborhood to be infinite.)",
     "This observation leads us to the following definition: $$$$ A set $A$ is *bounded* if it is a subset of _some_\
     neighborhood.",
-    "We are now ready to prove the claim in the title of this lesson: all compact sets are bounded.",
+    "Our goal for this lesson is to prove that all compact sets are bounded. After all, this is a property that makes\
+    sense for a \"sort of\" finite set. Proving that compact sets are bounded is a sign that our definition of compactness\
+    is a good one.",
     "To prove anything about compact sets, the key is to construct the right open cover and take advantage of the finite\
     subcover that compactness guarantees. $$$$ In this case, we've actually seen the idea behind the proof already.",
     "TOP: Let's begin by considering an arbitrary compact set $K$.",

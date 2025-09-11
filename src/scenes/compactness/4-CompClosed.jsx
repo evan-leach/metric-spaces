@@ -14,7 +14,7 @@ export const SceneConfig = {
     "TOP: Our aim in this lesson is to prove that all compact sets are closed. Let's begin by considering an arbitrary\
     compact set $K$.",
     "TOP: Remember that a set is closed if it contains all of its boundary points. $$$$ To show that $K$ is closed, we\
-    will prove that any point _not_ in $K$ cannot be a boundary point. Take a moment to think about why this is\
+    will prove that any point _not_ in $K$ cannot be a boundary point. Take a moment to verify that this is\
     equivalent to proving that $K$ is closed.",
     "TOP: Let's consider an arbitrary point $x$ which does not lie in $K$. We'll take the same approach as before:\
     choosing an open cover, finding a finite subcover, and finally using some property of finite sets.",
@@ -40,8 +40,10 @@ export const SceneConfig = {
     Since the neighborhood $N_{1/m}(x)$ does not, this means that $x$ is not a boundary point.",
     "TOP: This is just what we wanted to show! There are no boundary points in $K^c$, so every boundary point of $K$\
     must be an element of $K$. In other words, $K$ is closed.",
-    "We now have another example of how compact sets are similar to finite sets. Finite sets are closed (singletons are\
-    closed, so finite sets are finite unions of closed sets), and compact sets share this property.",
+    "We now have another example of how compact sets are similar to finite sets. Finite sets are closed (as finite unions\
+    of closed singletons), and compact sets again share this property.",
+    "You should take see what happens if we try to do the steps in this proof for a set which is not closed. If you use\
+    a boundary point of such a set which is not an element of the set, you'll find an open cover with no finite subcover.",
     "So far the properties we've proven about compact sets have all been simple and familiar. In the next lesson, we'll\
     prove a far more interesting and suprising property about compact sets."
   ]
@@ -196,8 +198,8 @@ function CompClosed({ windowSize, stepIndex, isPanelOpen, sceneKey }) {
       <Union
         key={`A-3`}
         shapes={[
-          { type: 'circle', center: [2, -0.5], radius: 0.8/3 },
-          { type: 'circle', center: [2, -0.5], radius: 0.8/3 }
+          { type: 'circle', center: [2, -0.5], radius: 0.8/5 },
+          { type: 'circle', center: [2, -0.5], radius: 0.8/5 }
         ]}
         color={colors.purple}
         fillOpacity={0.3}
@@ -209,7 +211,7 @@ function CompClosed({ windowSize, stepIndex, isPanelOpen, sceneKey }) {
         stepIndex={stepIndex}
       />
       <Blob
-        center={[2,-0.23]}
+        center={[2,-0.5 + 0.8/5]}
         size={0.01}
         harmonicsConfig={{ scale: 0.3, seed: 480 }}
         color={colors.purple}
@@ -225,7 +227,7 @@ function CompClosed({ windowSize, stepIndex, isPanelOpen, sceneKey }) {
 
       <Distance
         point1Center={[2,-0.5]}
-        point2Center={[2.3, -0.3]}
+        point2Center={[2.12, -0.37]}
         noPoints={true}
         lineColor={colors.gray}
         showLabel={true}
@@ -260,7 +262,7 @@ function CompClosed({ windowSize, stepIndex, isPanelOpen, sceneKey }) {
         labelAttach="se"
       />
       <Point
-        center={[2.3,-0.3]}
+        center={[2.12,-0.37]}
         color={colors.orange}
         startFrame={7}
         endFrame={9}

@@ -87,12 +87,12 @@ function ClosedUnion({ windowSize, stepIndex, isPanelOpen, sceneKey }) {
 
       <ConstrainedMovablePoint
         center={[0,-1]}
-        initialPosition={[0, -0.2]}
+        initialPosition={[-1, -1]}
         startFrame={3}
         endFrame={4}
         stepIndex={stepIndex}
         labelContext={() => "$S_z$"}
-        labelAttach="ne"
+        labelAttach="se"
         labelAttachDistance={30}
         constraintFunction={getBlobRadius}
         marginPixels={0}

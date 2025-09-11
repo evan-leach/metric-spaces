@@ -11,15 +11,15 @@ export const SceneConfig = {
     finite set: a set for which every cover has a finite subcover. $$$$ Right now, the only sets that fit this\
     definition are finite. Any other set has a cover consisting entirely of singletons which has no finite subcover.",
     "One way to prevent this singleton cover is to restrict the types of sets allowed in our covers. $$$$ Notice that\
-    singletons are not open sets: unless we're working in a really strange metric space (such as one with the discrete\
-    metric), the point $x$ is not an interior point of the singleton $S_x$.",
+    singletons are not _open_ sets, as the point $x$ is not an interior point of the singleton $S_x$ (unless we're\
+    working in a really strange metric space, such as one with the discrete metric).",
     "A cover consisting entirely of open sets is called an *open cover.* $$$$ Even though the singleton cover of\
-    an infinite set always gives us a cover with no finite subcover, it's not an open cover.",
+    an infinite set always gives us a cover with no finite subcover, it's not an _open_ cover.",
     "If we only require that every _open_ cover of a set has a finite subcover (rather than _all_ covers), then the\
     condition becomes a little bit broader. We can no longer simply rule out all infinite sets using the singleton\
-    cover. $$$$ This is exactly the less restrictive condition we have been looking for!",
+    cover. $$$$ This is exactly the less restrictive definition we've been looking for!",
     "TOP: A set $K$ is called *compact* if every open cover of $K$ has a finite subcover. $$$$ We will denote\
-    compact sets with the letter $K$, and we will color them gray.",
+    compact sets with the letter $K$, and we'll color them gray.",
     "TOP: We now have two big questions to answer: $$$$ 1. What can we do with compact sets? $$$$ 2. What kinds of sets\
     are compact?",
     "TOP: The first answer is that we can do a whole lot with these sets. Even though open covers are a little bit\
@@ -30,7 +30,7 @@ export const SceneConfig = {
     subcover. We'll see in the rest of this section that we can do a lot with these open covers.",
     "The second question asks which sets are compact. We know that finite sets are compact; every cover, open or\
     not, of finite set has a finite subcover. $$$$ Which infinite sets are compact, though?",
-    "This question is hard to answer. The downside of having so many open covers to choose from\
+    "This is a hard question. The downside of having so many open covers to choose from\
     is that it's a tall order to prove that _every single one_ has a finite subcover. $$$$ We will answer this\
     question completely in the final section, and it will be a beautiful culmination of our exploration.",
     "For now, though, let's focus on the first question. You should temporarily take for granted that interesting\
@@ -50,7 +50,7 @@ function Compactness({ windowSize, stepIndex, isPanelOpen, sceneKey }) {
     radius: {
       7: 0,
       8: 1,
-      9: 0
+      10: 0
     }
   }), [])
 
@@ -128,29 +128,12 @@ function Compactness({ windowSize, stepIndex, isPanelOpen, sceneKey }) {
           />
         );
       })}
-      {Array.from({ length: 3 }, (_, n) => {
+      {Array.from({ length: 4 }, (_, n) => {
         return (
           <Blob
             key={`blob${n}`}
             center={chaoticCurve2(n + 14)}
             size={5/(n+2)+2}
-            harmonicsConfig={{ scale: 0.5 - n/20, seed: 470 + n }}
-            color={colors.blue}
-            style="dashed"
-            fillOpacity={0.2}
-            strokeOpacity={0.4}
-            startFrame={9}
-            endFrame={9}
-            stepIndex={stepIndex}
-          />
-        );
-      })}
-      {Array.from({ length: 10 }, (_, n) => {
-        return (
-          <Blob
-            key={`blob${n}`}
-            center={chaoticCurve2(n + 20)}
-            size={5/(n+5)}
             harmonicsConfig={{ scale: 0.5 - n/20, seed: 470 + n }}
             color={colors.blue}
             style="dashed"

@@ -27,26 +27,26 @@ export const SceneConfig = {
     coordinate plane.",
     "TOP: There are lots of subcovers of this cover. For example, we could remove the sets $B_1(x)$, $B_2(x)$, and $B_3(x)$,\
     and the remaining sets would still cover the entire coordinate plane.",
-    "TOP: However, there is no _finite_ subcover of this cover. If we only kept finitely many of these sets, then there\
-    would be a _largest_ one. Any point outside of this largest neighborhood would not be contained in any of the\
-    remaining sets. This means that the finite subcollection would not be a cover.",
+    "TOP: However, there is no _finite_ subcover of this cover. $$$$ If we only keep finitely many of these sets, then there\
+    must be a _largest_ one. Any point outside of this largest ball is not contained in any of the remaining sets,\
+    so the finite subcollection is not a cover.",
     "TOP: Now let's look at another example. This set $F$ is finite, and it contains exactly five points.",
     "TOP: It turns out that _every_ cover of this set has a finite subcover. We'll see why on the next slide.",
     "TOP: We know that each point in $F$ lies in at least one of the sets in the cover. For each point, we can pick _exactly_\
     one of these sets in the cover containing it. $$$$ The collection of these sets is a finite subcover of $F$!",
     "TOP: We can do this for any finite set. Any cover of a set with $n$ elements has a finite subcover with at most $n$ sets.\
     $$$$ This means that for finite sets, every cover has a finite subcover.",
-    "Finite sets are also the _only_ sets for which every cover has a finite subcover. $$$$ In other words, if a set is\
+    "Finite sets are actually the _only_ sets for which every cover has a finite subcover. $$$$ In other words, if a set is\
     infinite, then there is an infinite cover of the set with no finite subcover. We can find this cover using a tool\
     from the previous section: _singletons._",
     "TOP: Given infinite set $X$, we can consider the cover consisting of the singletons $S_z$ for each $z$ in $X$. This is an\
     infinite cover of $X$, since $X$ contains infinitely many points.",
     "TOP: If we remove _any_ set $S_z$ from this collection, then the point $z$ won't be covered anymore. This means that our cover\
     has no finite subcover; every single set in the cover is _necessary._",
-    "We've just discovered a new equivalent definition for finite sets: a set $A$ is finite if and only if every (possibly infinite)\
+    "We've just discovered a new equivalent definition for finite sets: a set $A$ is finite if and only if every\
     cover of $A$ has a finite subcover. $$$$ This seems like an overly complicated definition, and it absolutely is! It doesn't\
     help us work with finite sets, but it reframes finiteness in a way that we can modify to get compactness.",
-    "Notice that we haven't yet taken advantage of the fact that we are _working in a metric space._ We've used sets, unions, and\
+    "Notice that we haven't yet taken advantage of the fact that we're working in a _metric space._ We've used sets, unions, and\
     subsets, but nothing related to our distance function! There are no open sets, neighborhoods, or limit points to be seen.",
     "We can add a _single word_ to this definition to take advantage of all these tools and give the definition of compactness.\
     $$$$ We'll see what this change is in the next lesson."
@@ -98,17 +98,11 @@ function Covers({ windowSize, stepIndex, isPanelOpen, sceneKey }) {
   ], [])
 
   const extraBlobs = useMemo(() => [
-    { center: [0,0], size: 0.5, seed: 414, scale: 0.15 },
     { center: [2,-3], size: 1, seed: 415, scale: 0.1 },
     { center: [-3,1.5], size: 1.5, seed: 416, scale: 0.15 },
-    { center: [3,-1.5], size: 0.2, seed: 417, scale: 0.1 },
-    { center: [-4,-0.5], size: 0.3, seed: 418, scale: 0.1 },
     { center: [0,0], size: 0.2, seed: 419, scale: 0.1 },
-    { center: [0.6,2.3], size: 0.15, seed: 420, scale: 0.1 },
-    { center: [-2.2,-2], size: 3, seed: 421, scale: 0.1 },
     { center: [0,0], size: 0.05, seed: 422, scale: 0.1 },
     { center: [-2,-1], size: 2, seed: 423, scale: 0.1 },
-    { center: [1,1.2], size: 2.5, seed: 424, scale: 0.1 },
     { center: [-1.5,3], size: 0.18, seed: 425, scale: 0.1 },
     { center: [0,-2], size: 0.22, seed: 426, scale: 0.1 }
   ], [])
@@ -298,7 +292,7 @@ function Covers({ windowSize, stepIndex, isPanelOpen, sceneKey }) {
         endFrame={18}
         stepIndex={stepIndex}
         labelContext={() => "$S_z$"}
-        labelAttach="e"
+        labelAttach="se"
       />
     </BaseScene>
   )
