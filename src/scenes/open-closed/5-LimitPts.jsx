@@ -10,9 +10,9 @@ import { colors } from '../../config/colors'
 export const SceneConfig = {
   zoom: { min: 0.2, max: 50000 },
   steps: [
-    "TOP: At the start of this section, we saw elements of a set $A$ that _looked_ different and turned\
+    "TOP: At the start of this section, we saw elements of a set $A$ that _looked_ different from each other and turned\
     our qualitative observations into precise definitions for interior, exterior, and boundary points.",
-    "TOP: For example, these two points _look_ different, and we can indeed distinguish them. One is an interior point, and one\
+    "TOP: For example, these two points look different, and we can indeed distinguish them. One is an interior point, and one\
     is a boundary point.",
     "TOP: However, we don't yet have a way to distinguish these two points from each other, even though they also look different.\
     They're both boundary points of $A$, since any neighboorhood of either point contains at least one element of $A$ and of $A^c$.\
@@ -21,8 +21,8 @@ export const SceneConfig = {
     neighborhoods. The other point would still lie on the boundary even if it wasn't an _element_ of $A$.",
     "This leads us to the following definition: $$$$ A point $x$ is a *limit point* of a set $A$ if every neighborhood of $x$\
     contains a point of $A$ _other than_ $x$ _itself._",
-    "TOP: This is how we distinguish the two boundary points. Any neighborhood of $x$ contains elements of $A$ other than $x$...",
-    "TOP: ...and while some neighborhoods of $y$ contain elements of $A$ other than $y$...",
+    "TOP: This is how we distinguish between the two boundary points. Any neighborhood of $x$ contains elements of $A$ other than $x$...",
+    "TOP: ...and while _some_ neighborhoods of $y$ contain elements of $A$ other than $y$...",
     "TOP: ...a small enough neighborhood will contain _only_ $y$. $$$$ This means that $x$ is a limit point of $A$, and $y$ is not.",
     "TOP: Not all limit points are necessarily elements of $A$, as this example shows.",
     "TOP: The two limit points we've seen so far had _other limit points_ as neighbors. This point, however, is different.\
@@ -310,7 +310,7 @@ function LimitPts({
         startFrame={12}
         endFrame={19}
         stepIndex={stepIndex}
-        labelAttach="ne"
+        labelAttach="se"
         labelPointIndex={5}
         labelContext={() => '$A$'}
       />

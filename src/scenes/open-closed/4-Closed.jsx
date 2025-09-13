@@ -5,6 +5,7 @@ import Point from '../../components/objects/Point'
 import { useKeyframeAnimation } from '../../hooks/useKeyframeAnimation'
 import { colors } from '../../config/colors'
 import InequalityPlot from '../../components/objects/InequalityPlot'
+import Union from '../../components/objects/Union'
 
 export const SceneConfig = {
   steps: [
@@ -18,17 +19,18 @@ export const SceneConfig = {
     points which are _not_ not in $A$. In other words, the complement of $A^c$ is the set of all points which _are_ in $A$.",
     "Fact #2: $$$$ The boundaries of a set and its complement are the same. $$$$ Remember that for $x$ to be a\
     boundary point of $A$, every neighborhood of $x$ must contain points both in $A$ and in $A^c$. For $x$ to be\
-    a boundary point of $A^c$, every neighborhood of $x$ must contain points in both $A^c$ and $(A^c)^c$. But fact #1\
+    a boundary point of $A^c$, every neighborhood of $x$ must contain points in both $A^c$ and $(A^c)^c$. Fact #1\
     tells us that $(A^c)^c = A$, so these conditions are identical!",
     "TOP: You can see fact #2 illustrated visually here. The boundary, highlighted in red, is the same for both $A$ and $A^c$.",
     "TOP: Here, the set $A$ contains the shared boundary in its entirety, which means that $A^c$ contains _none_ of the boundary.\
     This means that $A^c$ is open!",
     "In general, a set is closed _if and only if_ its complement is open. This is because the whole boundary is part of $A$ if and only\
-    if none of the boundary is part of $A^c$. $$$$ Similarly, a set is open _if and only if_ its complement is closed. This is because\
-    none of the boundary lies in $A$ if and only if all of the boundary lies in $A^c$. $$$$ In other words, open and closed sets come\
-    in pairs. Whenever you have an open or closed set, you can find the other type of set by examining the complement.",
-    "One consequence of this duality is that for any point $x$ and $r > 0$, the set of all points $y$ such that $d(x,y) \\geq r$ is closed.\
-    This is because this set is the complement of $N_r(x)$, which we proved to be open in the last lesson.",
+    if none of the boundary is part of $A^c$. $$$$ Similarly, a set is open if and only if its complement is closed. This is because\
+    none of the boundary lies in $A$ if and only if all of the boundary lies in $A^c$.",
+    "In other words, open and closed sets come in pairs. Whenever you have an open or closed set, you can find the other type of set\
+    by examining the complement.",
+    "TOP: One consequence of this duality is that for any point $x$ and $r > 0$, the set of all points $y$ such that $d(x,y) \\geq r$\
+    is closed. This is because this set is the complement of $N_r(x)$, which we proved to be open in the last lesson.",
     "If you're looking for a challenge, try to prove that the set of all points $y$ such that $d(x,y) > r$ is open. The argument\
     is very similar to what we did in the last lesson, and you'll realize that the triangle inequality again plays a key role.\
     It's best to work this out by drawing a picture. $$$$ This set is the _complement_ of $B_r(x)$, so if you can prove that\
@@ -162,14 +164,26 @@ function Closed({
         />
       ))}
 
+      <Union
+        shapes={[
+          { type: 'circle', center: [0,-0.8], radius: 2.4 },
+          { type: 'circle', center: [0,-0.8], radius: 2.4 }
+        ]}
+        color={colors.blue}
+        invert={true}
+        startFrame={10}
+        endFrame={10}
+        stepIndex={stepIndex}
+      />
+
       <Blob
         center={[-2.2,1]}
         size={2}
         harmonicsConfig={{ scale: 0.3, seed: 500 }}
         color={colors.blue}
         style="dashed"
-        startFrame={12}
-        endFrame={12}
+        startFrame={13}
+        endFrame={13}
         stepIndex={stepIndex}
       />
       <Blob
@@ -178,8 +192,8 @@ function Closed({
         harmonicsConfig={{ scale: 0.3, seed: 509 }}
         color={colors.blue}
         style="solid"
-        startFrame={12}
-        endFrame={12}
+        startFrame={13}
+        endFrame={13}
         stepIndex={stepIndex}
       />
       <Blob
@@ -188,8 +202,8 @@ function Closed({
         harmonicsConfig={{ scale: 0.3, seed: 502 }}
         color={colors.blue}
         style="solid"
-        startFrame={12}
-        endFrame={12}
+        startFrame={13}
+        endFrame={13}
         stepIndex={stepIndex}
         labelContext={() => `$B$`}
         labelAttach="nw"
@@ -204,8 +218,8 @@ function Closed({
         color={colors.black}
         fillOpacity={0.4}
         strokeOpacity={0.5}
-        startFrame={15}
-        endFrame={16}
+        startFrame={16}
+        endFrame={17}
         stepIndex={stepIndex}
       />
       <InequalityPlot
@@ -214,8 +228,8 @@ function Closed({
         }}
         color={colors.blue}
         strokeOpacity={0}
-        startFrame={16}
-        endFrame={16}
+        startFrame={17}
+        endFrame={17}
         stepIndex={stepIndex}
       />
     </BaseScene>

@@ -7,7 +7,7 @@ export const sidebarConfig = [
       { text: 'Sets', scene: '2-Sets' },
       { text: 'Metrics', scene: '3-Metrics' },
       { text: 'Examples of metric spaces', scene: '4-Examples' },
-      { text: 'Neighborhoods', scene: '5-Balls' }
+      { text: 'Balls and neighborhoods', scene: '5-Balls' }
     ]
   },
   {
@@ -47,8 +47,15 @@ export const sidebarConfig = [
     ]
   },
   {
-    title: 'Coming Soon: Which Sets are Compact?',
-    folder: '',
-    buttons: []
+    title: 'Which Sets are Compact?',
+    folder: 'finale',
+    buttons: [
+      { text: 'Total boundedness', scene: '1-TotalBoundedness' },
+      { text: 'Cauchy sets and completeness', scene: '2-Completeness' },
+      { text: 'Proving completeness and total boundedness', scene: null },
+      { text: 'Proving sequential compactness', scene: null },
+      { text: 'The Lebesgue Number Lemma', scene: null },
+      { text: 'The decomposition of compactness', scene: null }
+    ]
   }
 ] 
