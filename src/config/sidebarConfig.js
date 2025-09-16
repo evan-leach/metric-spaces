@@ -52,7 +52,7 @@ export const sidebarConfig = [
     buttons: [
       { text: 'Total boundedness', scene: '1-TotalBoundedness' },
       { text: 'Cauchy sets and completeness', scene: '2-Completeness' },
-      { text: 'Proving completeness and total boundedness', scene: null },
+      { text: 'Proving completeness and total boundedness', scene: '3-CTBProof' },
       { text: 'Proving sequential compactness', scene: null },
       { text: 'The Lebesgue Number Lemma', scene: null },
       { text: 'The decomposition of compactness', scene: null }

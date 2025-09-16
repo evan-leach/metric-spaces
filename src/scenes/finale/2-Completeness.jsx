@@ -25,8 +25,8 @@ export const SceneConfig = {
     metric space.",
     "We need to upgrade the property of being closed to account for these missing limit points. This requires us to\
     capture the notion of the points \"approaching\" somewhere without actually saying where.",
-    "TOP: Take a look at this sequence of points. They are getting closer and closer to some point, but we don't even know if\
-    this point is part of the metric space. Instead, notice that the points are also getting closer and closer to _each other._",
+    "TOP: Take a look at this sequence of points. They are getting closer and closer to some point, but remember our goal is to\
+    not reference any actual limit point. Instead, notice that the points are also getting closer and closer to _each other._",
     "TOP: More precisely, we can fit all but finitely many of these points inside of a neighborhood with a small radius.",
     "TOP: As the radius gets smaller, we miss more and more of the points. However, we can still fit the infnite cluster\
     inside the neighborhood, leaving only finitely many points behind. Zoom in to see this clearly!",
@@ -43,11 +43,11 @@ export const SceneConfig = {
     metric space.",
     "TOP: The entire coordinate plane is complete; any Cauchy set in the coordinate plane has a limit point.",
     "TOP: This looks visually obvious, but is actually a deep and fundamental fact about the _real numbers_ (where we include both\
-    rational and irrational numbers). $$$$ Diving into this rabbit hole would take take us into the field of _real analysis,_\
-    the study of the real numbers.",
+    rational and irrational numbers). $$$$ Diving into this rabbit hole would take take us into the field of real analysis,\
+    which is the study of real numbers.",
     "We saw in the previous lesson that, in the coordinate plane, boundedness is equivalent to total boundedness. Similarly,\
     completeness is equivalent to being closed in the coordinate plane.",
-    "TOP: Any Cauchy subset $C$ of a closed set $A$, has a limit point in the coordinate plane since the entire coordinate plane\
+    "TOP: Any Cauchy subset $C$ of a closed set $A$ has a limit point in the coordinate plane since the entire coordinate plane\
     is complete. Since $A$ is closed, this limit point is also an element of $A$. Therefore, $C$ has a limit point in $A$.",
     "TOP: This means that any closed set in the coordinate plane is complete, so the two properties are equivalent.",
     "In the coordinate plane, complete and totally bounded sets are _exactly the same_ as closed and bounded sets. $$$$ Our two\
@@ -70,11 +70,11 @@ function Completeness({ windowSize, stepIndex, isPanelOpen, sceneKey }) {
   }
 
   const spiralCurve2 = (t) => {
-    const angle = 3 * t + 1.5
+    const angle = -3 * t + 3.8
     const radius = t * 3
     return [
-      -0.5 - radius * Math.cos(angle),
-      radius * Math.sin(angle) - 1
+      -1.3 - radius * Math.cos(angle),
+      radius * Math.sin(angle) - 1.6653
     ]
   }
 
@@ -90,7 +90,7 @@ function Completeness({ windowSize, stepIndex, isPanelOpen, sceneKey }) {
   const circleKeyFrames = useMemo(() => ({
     radius: {
       8: 0,
-      9: 0.25,
+      9: 0.3,
       10: 0
     }
   }), [])
@@ -98,7 +98,7 @@ function Completeness({ windowSize, stepIndex, isPanelOpen, sceneKey }) {
   const circle2KeyFrames = useMemo(() => ({
     radius: {
       9: 0,
-      10: 0.1,
+      10: 0.13,
       12: 0
     }
   }), [])
@@ -315,9 +315,9 @@ function Completeness({ windowSize, stepIndex, isPanelOpen, sceneKey }) {
         pointColor={colors.red}
         startFrame={19}
         endFrame={20}
-        labelAttach='n'
+        labelAttach='e'
         labelContext={() => '$C$'}
-        labelPointIndex={3}
+        labelPointIndex={2}
         stepIndex={stepIndex}
       />
     </BaseScene>

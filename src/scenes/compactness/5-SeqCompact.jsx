@@ -33,13 +33,16 @@ export const SceneConfig = {
     "TOP: This means that we can find a neighborhood of $y$ containing _at most_ one point of $A$. Try dragging the point $y$\
     around to see this!",
     "TOP: Now we'll construct an open cover with a truly enormous amount of sets. We will use the collection of _all_ these\
-    neighborhoods, for every single point $y$ in $K$.",
+    neighborhoods, for every single point $y$ in $K$. $$$$ As you drag $y$ around, you can see the neighborhoods in this cover\
+    one at a time.",
     "TOP: This collection indeed covers $K$, since each point of $K$ is contained in its own neighborhood.",
-    "TOP: We can't possibly visualize this entire cover at once, but compactness guarantees that it has a finite subcover.\
-    $$$$ Here is what one such finite subcover looks like.",
-    "TOP: Since $A$ is a subset of $K$, it is also covered by these neighborhoods. Each neighborhood contains at _most_\
-    one point of $A$, so the number of points in $A$ is at most the number of neighborhoods in the subcover.",
-    "TOP: This means that $A$ is finite, which is exactly what we wanted to show!",
+    "TOP: Compactness guarantees that this open cover has a finite subcover, and this is what one such subcover looks like.\
+    $$$$ Take a moment to verify that each set in our cover contains at _most_ one point of $A$.",
+    "TOP: Notice also that $A$ is covered by these neighborhoods because it is a subset of $K$.",
+    "TOP: Since there must be a neighborhood in the subcover containing each point of $A$, and since no neighborhood contains\
+    more than one point of $A$, the number of points in $A$ is at most the number of neighborhoods in the subcover.",
+    "TOP: This means that $A$ is finite, which is exactly what we wanted to show! $$$$ Any subset of $K$ without a limit point\
+    in $K$ must be finite, so any _infinite_ subset of $K$ must have a limit point in $K$.",
     "This property of compact sets is quite powerful, and it will serve as a useful tool throughout the rest of this exploration.",
     "Sequential compactness is also just what we need to pinpoint the precise difference between compact and finite sets. $$$$\
     We'll take a look at this connection in the conclusion of this section."
@@ -150,7 +153,7 @@ function SeqCompact({ windowSize, stepIndex, isPanelOpen, sceneKey }) {
     radius: {
       14: 0,
       15: 1,
-      17: 0
+      18: 0
     }
   }), [])
 
@@ -278,7 +281,7 @@ function SeqCompact({ windowSize, stepIndex, isPanelOpen, sceneKey }) {
         harmonics={blobHarmonics}
         color={colors.gray}
         startFrame={10}
-        endFrame={17}
+        endFrame={18}
         stepIndex={stepIndex}
         labelAttach='w'
         labelContext={() => "$K$"}
@@ -290,7 +293,7 @@ function SeqCompact({ windowSize, stepIndex, isPanelOpen, sceneKey }) {
         k={0.99}
         pointColor={colors.red}
         startFrame={11}
-        endFrame={17}
+        endFrame={18}
         stepIndex={stepIndex}
         labelAttach="s"
         labelPointIndex={2}
