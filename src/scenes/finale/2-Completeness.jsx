@@ -24,8 +24,8 @@ export const SceneConfig = {
     doesn't cover any points with an $x$-coordinate of $1$, but this isn't a problem since those points aren't part of our\
     metric space.",
     "We need to upgrade the property of being closed to account for these missing limit points. This requires us to\
-    capture the notion of the points \"approaching\" somewhere without actually saying where.",
-    "TOP: Take a look at this sequence of points. They are getting closer and closer to some point, but remember our goal is to\
+    capture the notion of a set of points \"approaching\" somewhere without actually saying where.",
+    "TOP: Take a look at this set of points. They are getting closer and closer to some point, but remember our goal is to\
     not reference any actual limit point. Instead, notice that the points are also getting closer and closer to _each other._",
     "TOP: More precisely, we can fit all but finitely many of these points inside of a neighborhood with a small radius.",
     "TOP: As the radius gets smaller, we miss more and more of the points. However, we can still fit the infnite cluster\
@@ -35,11 +35,15 @@ export const SceneConfig = {
     "Notice that our definition doesn't reference the actual limit point, so it doesn't matter whether or not the limit\
     point is part of our metric space. We have solved the problem of missing limit points!",
     "We can now define our upgraded property: $$$$ A set $A$ is *complete* if every Cauchy subset of $A$ has a limit point\
-    in $A$. $$$$ This is a stronger property than being closed. Instead of _just_ requiring that the limit points of $A$\
+    in $A$.",
+    "TOP: Every complete set must be closed. Indeed, if $x$ is a limit point of $A$, then...",
+    "TOP: ...we can construct a Cauchy set with $x$ as a limit point by choosing points in $A$ closer and closer to $x$. If\
+    $A$ is complete, then this limit point $x$ must be part of $A$. This means that $A$ is closed.",
+    "However, completeness is a stronger property than being closed. Instead of _just_ requiring that the limit points of $A$\
     are elements of $A$, we also require that whenever there _should_ be a limit point, there actually is one.",
-    "TOP: The set $A$ from earlier is not complete. Even though it contains all of its limit points, this Cauchy subset of $A$\
-    does not have a limit point in $A$.",
-    "TOP: The Cauchy subset can detect when a limit point should be present, even if no actual missing limit point exists in the\
+    "TOP: For example, the closed set $A$ from earlier is not complete. Even though it contains all of its limit points, this\
+    Cauchy subset of $A$ does not have a limit point in $A$.",
+    "TOP: The Cauchy subset can _detect_ when a limit point should be present, even if no actual missing limit point exists in the\
     metric space.",
     "TOP: The entire coordinate plane is complete; any Cauchy set in the coordinate plane has a limit point.",
     "TOP: This looks visually obvious, but is actually a deep and fundamental fact about the _real numbers_ (where we include both\
@@ -243,6 +247,38 @@ function Completeness({ windowSize, stepIndex, isPanelOpen, sceneKey }) {
         showCenterPoint={false}
       />
 
+      <Blob
+        center={[0,-0.5]}
+        size={1.8}
+        harmonicsConfig={{ scale: 0.3, seed: 529 }}
+        color={colors.blue}
+        style='solid'
+        startFrame={14}
+        endFrame={15}
+        stepIndex={stepIndex}
+        labelContext={() => `$A$`}
+        labelAttach='e'
+      />
+
+      <PointSequence
+        curve={(t) => [3 * t - 1.422, -1.5]}
+        cutoff={40}
+        k={0.6}
+        pointColor={colors.orange}
+        startFrame={15}
+        endFrame={15}
+        stepIndex={stepIndex}
+      />
+      <Point
+        center={[-1.422,-1.5]}
+        color={colors.red}
+        startFrame={14}
+        endFrame={15}
+        stepIndex={stepIndex}
+        labelContext={() => `$x$`}
+        labelAttach='w'
+      />
+
       <InequalityPlot
         xInequality={{ 
           ">=": (y) => -0.8,
@@ -251,8 +287,8 @@ function Completeness({ windowSize, stepIndex, isPanelOpen, sceneKey }) {
         color={colors.black}
         fillOpacity={0.4}
         strokeOpacity={0.5}
-        startFrame={14}
-        endFrame={15}
+        startFrame={17}
+        endFrame={18}
         stepIndex={stepIndex}
       />
       <InequalityPlot
@@ -261,8 +297,8 @@ function Completeness({ windowSize, stepIndex, isPanelOpen, sceneKey }) {
         }}
         color={colors.blue}
         strokeOpacity={0}
-        startFrame={14}
-        endFrame={15}
+        startFrame={17}
+        endFrame={18}
         stepIndex={stepIndex}
       />
 
@@ -271,8 +307,8 @@ function Completeness({ windowSize, stepIndex, isPanelOpen, sceneKey }) {
         cutoff={40}
         k={0.6}
         pointColor={colors.red}
-        startFrame={14}
-        endFrame={15}
+        startFrame={17}
+        endFrame={18}
         stepIndex={stepIndex}
       />
 
@@ -280,8 +316,8 @@ function Completeness({ windowSize, stepIndex, isPanelOpen, sceneKey }) {
         y={1000000}
         above={false}
         color={colors.blue}
-        startFrame={16}
-        endFrame={17}
+        startFrame={19}
+        endFrame={20}
         stepIndex={stepIndex}
       />
 
@@ -290,8 +326,8 @@ function Completeness({ windowSize, stepIndex, isPanelOpen, sceneKey }) {
         cutoff={40}
         k={0.6}
         pointColor={colors.red}
-        startFrame={16}
-        endFrame={17}
+        startFrame={19}
+        endFrame={20}
         stepIndex={stepIndex}
       />
 
@@ -301,8 +337,8 @@ function Completeness({ windowSize, stepIndex, isPanelOpen, sceneKey }) {
         harmonicsConfig={{ scale: 0.1, seed: 521 }}
         color={colors.blue}
         style='solid'
-        startFrame={19}
-        endFrame={20}
+        startFrame={22}
+        endFrame={23}
         stepIndex={stepIndex}
         labelContext={() => `$A$`}
         labelAttach='e'
@@ -313,8 +349,8 @@ function Completeness({ windowSize, stepIndex, isPanelOpen, sceneKey }) {
         cutoff={40}
         k={0.6}
         pointColor={colors.red}
-        startFrame={19}
-        endFrame={20}
+        startFrame={22}
+        endFrame={23}
         labelAttach='e'
         labelContext={() => '$C$'}
         labelPointIndex={2}

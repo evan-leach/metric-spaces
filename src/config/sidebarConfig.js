@@ -53,9 +53,9 @@ export const sidebarConfig = [
       { text: 'Total boundedness', scene: '1-TotalBoundedness' },
       { text: 'Cauchy sets and completeness', scene: '2-Completeness' },
       { text: 'Proving completeness and total boundedness', scene: '3-CTBProof' },
-      { text: 'Proving sequential compactness', scene: null },
-      { text: 'The Lebesgue Number Lemma', scene: null },
-      { text: 'The decomposition of compactness', scene: null }
+      { text: 'Proving sequential compactness', scene: '4-SeqProof' },
+      { text: 'The Lebesgue Number Lemma', scene: '5-LNL' },
+      { text: 'The decomposition of compactness', scene: '6-Finale' }
     ]
   }
 ] 

@@ -22,7 +22,8 @@ function PointSequence({
   labelAttachDistance = 30,
   labelSize = 14,
   labelColor = null,
-  labelPointIndex = 1
+  labelPointIndex = 1,
+  shift = 1
 }) {
   // Generate sequence of t values: k^1, k^2, k^3, ... up to cutoff
   const sequenceData = useMemo(() => {
@@ -30,7 +31,7 @@ function PointSequence({
     
     for (let n = 1; n <= cutoff; n++) {
       const t = Math.pow(k, n)  // t = k^n
-      const position = curve(t)
+      const position = curve(Math.pow(k, n + shift))
       
       points.push({
         t,

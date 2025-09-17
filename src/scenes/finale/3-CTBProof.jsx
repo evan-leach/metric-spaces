@@ -50,7 +50,7 @@ export const SceneConfig = {
     more than completeness and total boundedness.",
     "We need to prove two things in order to show that traversing back up the chain is possible. $$$$ 1. Complete and totally bounded sets\
     are sequentially compact. $$$$ 2. Sequentially compact sets are compact.",
-    "These two beautiful proofs will mark the conclusion of our exploration. We'll begin with the first one in the next lesson.",
+    "These two beautiful proofs will mark the conclusion of our exploration. We'll begin with the first one in the next lesson."
   ]
 }
 
