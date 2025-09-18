@@ -24,7 +24,7 @@ export const SceneConfig = {
     "TOP: Let's see what the lemma states. If we have an open cover of a set $A$, then every point $x$ in $A$ is contained in\
     some open set $U$ in the cover.",
     "TOP: Since $U$ is open, there exists $r > 0$ such that $N_r(x)$ is entirely contained in $U$. However, as the point $x$ changes, the\
-    necessary radius might also change.",
+    necessary radius to stay entirely within a single open set in the cover might also change.",
     "TOP: For a cover like this, the radius $r$ might need to get arbitrarily small. Try moving the point $x$ far away to the left or right\
     to see this! $$$$ For any $r > 0$, there is some point $x$ in $A$ such that $N_r(x)$ is not contained in any single open set in the cover.",
     "TOP: For a cover like this, the situation is different. There exists a fixed radius $r > 0$ such that for _every_ point\
@@ -36,43 +36,44 @@ export const SceneConfig = {
     lies entirely within some open set in the cover.",
     "Though this property seems a bit arbitrary right now, we'll see in the next lesson how it's the key tool for finding a finite subcover.\
     In fact, this lemma is where almost all of the work happens. Once we're done, the rest of the proof will fall right into place. $$$$\
-    Let's get starting with proving the lemma!",
-    "TOP: Let's begin with a sequentially compact set $A$ and some open cover of $A$. $$$$ As we saw in the previous examples, not all covers\
+    Let's get started with proving the lemma!",
+    "TOP: We'll begin with a sequentially compact set $A$ and some open cover of $A$. $$$$ As we saw in the previous examples, not all covers\
     have a Lebesgue number. We need to take advantage of our assumption that $A$ is sequentially compact, which means using the fact that\
     every infinite subset of $A$ has a limit point in $A$.",
-    "TOP: Our strategy will be to _encode_ the existence of a Lebesgue number into a set of points, and then apply sequential compactness to\
+    "TOP: Lebesgue numbers have seemingly nothing to do with sequential compactness, so we'll need to do some work. $$$$ Our strategy will be\
+    to _encode_ the existence of a Lebesgue number into a set of points, and then apply sequential compactness to\
     this set. Just like we did in the previous proofs, we'll construct this set point by point.",
-    "TOP: If $1$ is not a Lebesgue number of this cover, then there must exist a point $x_1$ in $A$ such that $N_1(x_1)$ is not contained in any\
-    single open set in the cover.",
+    "TOP: If $1$ is _not_ a Lebesgue number of this cover, this means that for some point $x_1$ in $A$, the neighborhood $N_1(x_1)$ is not\
+    contained in any single open set in the cover. $$$$ This will be the first point in our set.",
     "TOP: If $\\frac{1}{2}$ is not a Lebesgue number of this cover, then there exists a point $x_2$ in $A$ such that $N_{1/2}(x_2)$ is not\
-    contained in any single open set in the cover.",
-    "TOP: How long can we repeat this process? $$$$ If $\\frac{1}{n}$ ever becomes small enough that we can no longer find a point $x_n$ of $A$\
-    with $N_{1/n}(x_n)$ not being contained in any single open set in the cover, this would mean that $\\frac{1}{n}$ is a Lebesgue number\
-    of the cover.",
+    contained in any single open set in the cover. $$$$ Now our set has a second point.",
+    "TOP: How long can we repeat this process? $$$$ If $\\frac{1}{n}$ ever becomes small enough that we can no longer a neighborhood\
+    $N_{1/n}(x_n)$ which is not contained in any single open set in the cover, this would mean that _every_ such neighborhood\
+    is fully contained in some open set in the cover. In other words, $\\frac{1}{n}$ would be a Lebesgue number of the cover.",
     "TOP: If, on the other hand, we can continue indefinitely, this would mean that $A$ has no Lebesgue number. Our goal will be to show\
     that this cannot happen. If the process must terminate, then it means this covering has a Lebesgue number.",
     "TOP: Let's repeat the process as long as possible, and consider the set $X$ consisting of all points which are eventually chosen. $$$$\
     We know that if the process terminates, then $X$ will be finite.",
-    "TOP: What if the process _does_ go on indefinitely? Then the only way $X$ can be finite is if some point gets repeated infinitely many times.\
-    This is impossible, though, since for any fixed point $x$ in $A$, any sufficiently small neighborhood of $x$ is fully contained in some open\
-    set in the cover.",
+    "TOP: What if the process _does_ go on indefinitely? Then the only way $X$ can be finite in this case is if some point gets repeated\
+    infinitely many times. This is impossible, though, since for any fixed point $x$ in $A$, any sufficiently small neighborhood of $x$\
+    is fully contained in some open set in the cover.",
     "TOP: In other words, the only way that the process can go on forever is if $X$ is infinite. $$$$ We have _encoded_ the existance of a\
     Lebesgue number into the set $X$. The set $A$ has a Lebesgue number _if and only if _ $X$ is finite.",
     "TOP: Now we can use sequential compactness! Since every infinite subset of $A$ has a limit point in $A$, we can prove that $X$ is finite\
     by showing that it has no limit points in $A$.",
     "TOP: Let's consider any point $y$ in $A$. We will show that $y$ is not a limit point of $X$. $$$$ First notice that since $y$ lies\
     in some open set $U$ in the cover, there exists a neighborhood $N_s(y)$ which is fully contained in $U$. Zoom in to see this clearly!",
-    "TOP: Notice that, if a neighborhood centered at some point $z$ in $N_{s/2}(y)$ had a radius smaller than $\\frac{s}{2}$, this neighborhood\
+    "TOP: If a neighborhood centered at some point $z$ in $N_{s/2}(y)$ had a radius smaller than $\\frac{s}{2}$, this neighborhood\
     would be fully contained in $N_s(y)$ and therefore fully contained in $U$ as well. This is because of the triangle inequality,\
     and the argument is similar to the proof from earlier that neighborhoods are open.",
     "TOP: This means that, although the neighborhood $N_{s/2}(y)$ might contain some points of $X$, it cannot contain infinitely many.\
     Once $\\frac{1}{n}$ becomes smaller than $\\frac{s}{2}$, no point $x_n$ can lie in $N_{s/2}(y)$ (as $N_{1/n}(x_n)$ would then be entirely\
-    contained in $U$).",
+    contained in $U$, violating the method we chose the points $x_n$ with).",
     "TOP: For $y$ to be a limit point of $X$, every neighborhood of $y$ would have to contain _infinitely many_ points of $X$. Since the\
     neighborhood $N_{s/2}(y)$ does not, $y$ cannot be a limit point of $X$.",
     "TOP: This is just what we needed to show! We have proven that $X$ has no limit points in $A$, so it must be finite by sequential compactness.\
-    This means the process of choosing points $x_n$ cannot continue indefinitely, so for some large enough $n$, _every_ neighborhood of radius\
-    $\\frac{1}{n}$ around a point $x$ in $A$ must be fully contained in some open set in the cover.",
+    This means the process of choosing points $x_n$ cannot continue indefinitely, so once $\\frac{1}{n}$ gets small enough, _every_ neighborhood\
+    of radius $\\frac{1}{n}$ around a point $x$ in $A$ must be fully contained in some open set in the cover.",
     "In other words, $\\frac{1}{n}$ is a Lebesgue number of the cover. This is exactly what we wanted to prove! $$$$ Now let's finally see how\
     the lemma shows that sequentially compact sets are compact."
   ]
@@ -470,7 +471,7 @@ function LNL({ windowSize, stepIndex, isPanelOpen, sceneKey }) {
         strokeStyle='dashed'
         labelContext={() => '$N_s(y)$'}
         labelAttach="ne"
-        labelAttachDistance={35}
+        labelAttachDistance={40}
       />
 
       <Circle
@@ -481,7 +482,7 @@ function LNL({ windowSize, stepIndex, isPanelOpen, sceneKey }) {
         strokeStyle='dashed'
         labelContext={() => '$N_{s/2}(y)$'}
         labelAttach="nw"
-        labelAttachDistance={35}
+        labelAttachDistance={45}
       />
 
       <ConstrainedMovablePoint

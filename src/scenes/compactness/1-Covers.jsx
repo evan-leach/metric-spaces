@@ -103,7 +103,6 @@ function Covers({ windowSize, stepIndex, isPanelOpen, sceneKey }) {
     { center: [0,0], size: 0.2, seed: 419, scale: 0.1 },
     { center: [0,0], size: 0.05, seed: 422, scale: 0.1 },
     { center: [-2,-1], size: 2, seed: 423, scale: 0.1 },
-    { center: [-1.5,3], size: 0.18, seed: 425, scale: 0.1 },
     { center: [0,-2], size: 0.22, seed: 426, scale: 0.1 }
   ], [])
 
