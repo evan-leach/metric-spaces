@@ -52,7 +52,7 @@ export const SceneConfig = {
     "We discovered how these sets behaved under unions and intersections, and we saw our intuition fall apart in the infinite setting.\
     $$$$ We then tackled infinite sets directly by defining compactness. We saw what we can do with this property, and we proved exactly\
     _which_ sets are compact. $$$$ So much can be developed from nothing more than a set and a metric!",
-    "Thank you for taking this journey through metric spaces with me. $$$$ I really hope you enjoyed it."
+    "Thank you for taking this journey through metric spaces with me. $$$$ I really hope you enjoyed it!"
   ]
 }
 
