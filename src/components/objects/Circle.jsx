@@ -6,13 +6,6 @@ import Label from '../canvas/Label'
 import { colors } from '../../config/colors'
 import { ANIMATION_THRESHOLD } from '../../constants/animations'
 
-/**
- * Calculate the boundary point of a circle in a given direction
- * @param {Array} center - Circle center [x, y]
- * @param {number} radius - Circle radius
- * @param {string} attach - Direction: "n", "ne", "e", "se", "s", "sw", "w", "nw"
- * @returns {Array} Boundary point [x, y]
- */
 function calculateCircleBoundaryPoint(center, radius, attach) {
   const angleMap = {
     'n': Math.PI / 2,

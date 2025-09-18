@@ -1,14 +1,10 @@
 import React, { useMemo, useState } from 'react'
 import { Circle } from 'mafs'
 import ConstrainedMovablePoint from './ConstrainedMovablePoint'
-import { createDistanceToBoundaryFunction, createInsideBlobFunction, generateHarmonics } from './Blob'
 import { useFrameBasedOpacity } from '../../hooks/useFrameBasedOpacity'
 import { useKeyframeAnimation } from '../../hooks/useKeyframeAnimation'
 import { colors } from '../../config/colors'
 
-/**
- * AvoidantPoint - A constrained draggable point with adaptive neighborhood circle
- */
 function AvoidantPoint({
   constraintFunction,
   marginPixels = 0,

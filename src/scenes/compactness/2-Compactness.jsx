@@ -18,8 +18,8 @@ export const SceneConfig = {
     "If we only require that every _open_ cover of a set has a finite subcover (rather than _all_ covers), then the\
     condition becomes a little bit broader. We can no longer simply rule out all infinite sets using the singleton\
     cover. $$$$ This is exactly the less restrictive definition we've been looking for!",
-    "TOP: A set $K$ is called *compact* if every open cover of $K$ has a finite subcover. $$$$ We will denote\
-    compact sets with the letter $K$, and we'll color them gray.",
+    "TOP: A set is called *compact* if every open cover of the set has a finite subcover. $$$$ We will denote\
+    compact sets with the letter $K$.",
     "TOP: We now have two big questions to answer: $$$$ 1. What can we do with compact sets? $$$$ 2. What kinds of sets\
     are compact?",
     "TOP: The first answer is that we can do a whole lot with these sets. Even though open covers are a little bit\

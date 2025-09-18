@@ -6,9 +6,9 @@ import { useZoomInfo } from '../../hooks/useZoomInfo'
 import Label from '../canvas/Label'
 import { colors } from '../../config/colors'
 
-const ConstrainedMovablePoint = forwardRef(function ConstrainedMovablePoint({
-  constraintFunction,
-  center = [0, 0],
+const LNLPoint = forwardRef(function LNLPoint({
+  yMax,
+  yMin,
   marginPixels = 0,
   initialPosition = [0, 0],
   color = colors.red,
@@ -21,6 +21,11 @@ const ConstrainedMovablePoint = forwardRef(function ConstrainedMovablePoint({
   labelSize = 14,
   labelColor = null,
   onPointChange = null,
+  transitionFrame = 0,
+  points = [],
+  pointRadii = 2,
+  finalSize = 1,
+  safetyFactor = 0.8,
   // Circle options
   showCircle = false,
   circleRadius = 1,
@@ -51,39 +56,29 @@ const ConstrainedMovablePoint = forwardRef(function ConstrainedMovablePoint({
   }, [showCircle, circleKeyframes])
   
   // Use keyframe animation for circle properties
+  const transitionKeyframes = useMemo(() => { 
+    return {
+      t: {
+        [transitionFrame - 1]: 0,
+        [transitionFrame]: 1
+      }
+    }
+  }, [transitionFrame])
+
   const animatedCircleProps = useKeyframeAnimation(circleAnimationKeyframes, stepIndex)
-  
-  // Get current circle radius (from keyframes or fixed value)
-  const currentCircleRadius = animatedCircleProps.radius ?? circleRadius
-  
-  // Use ref for constraint function to avoid recreation when function identity changes
-  const constraintFunctionRef = useRef(constraintFunction)
-  constraintFunctionRef.current = constraintFunction
+  const interpolationProps = useKeyframeAnimation(transitionKeyframes, stepIndex)
   
   const constraint = useMemo(() => {
-    if (!constraintFunctionRef.current) {
-      return (position) => position
-    }
     
     return (attemptedPosition) => {
       const [x, y] = attemptedPosition
-      
-      const angle = Math.atan2(y - center[1], x - center[0])
-      const boundaryRadius = constraintFunctionRef.current(angle)
-      const attemptedDistance = Math.sqrt((x - center[0]) * (x - center[0]) + (y - center[1]) * (y - center[1]))
+
       const coordinateMargin = marginPixels / zoomLevel // Calculate margin inside constraint function
-      const constrainedRadius = Math.max(0, boundaryRadius - coordinateMargin)
+      const constrainedY = Math.min(Math.max(Math.min(y, yMax - coordinateMargin), yMin + coordinateMargin), yMax)
       
-      if (attemptedDistance <= constrainedRadius) {
-        return attemptedPosition
-      }
-      
-      const constrainedX = center[0] + constrainedRadius * Math.cos(angle)
-      const constrainedY = center[1] + constrainedRadius * Math.sin(angle)
-      
-      return [constrainedX, constrainedY]
+      return [x, constrainedY]
     }
-  }, [center[0], center[1], marginPixels, zoomLevel])
+  }, [marginPixels, zoomLevel, yMin, yMax])
 
   // Stabilize initialPosition to prevent recreation of useMovablePoint
   const stableInitialPosition = useMemo(() => initialPosition, [])
@@ -92,6 +87,23 @@ const ConstrainedMovablePoint = forwardRef(function ConstrainedMovablePoint({
     color: color,
     constrain: constraint
   })
+
+  const distanceToClosestPoint = useMemo(() => {
+    if (!points || points.length === 0) return 1
+    const [px, py] = draggablePoint.point
+    let minDist = Infinity
+    for (const [qx, qy] of points) {
+      const dx = px - qx
+      const dy = py - qy
+      const d = dx * dx + dy * dy
+      if (d < minDist) minDist = d
+    }
+    return Math.sqrt(minDist)
+  }, [draggablePoint.point, points])
+
+  const interp = interpolationProps.t ?? 1
+  const factor = (1 - interp) * (pointRadii - distanceToClosestPoint) * safetyFactor + interp * finalSize
+  const currentCircleRadius = (animatedCircleProps.radius ?? circleRadius) * factor
   
   const finalLabelColor = labelColor || color
 
@@ -190,4 +202,4 @@ const ConstrainedMovablePoint = forwardRef(function ConstrainedMovablePoint({
   )
 })
 
-export default ConstrainedMovablePoint 
+export default LNLPoint 

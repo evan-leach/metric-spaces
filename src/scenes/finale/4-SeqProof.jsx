@@ -141,7 +141,7 @@ function SeqProof({ windowSize, stepIndex, isPanelOpen, sceneKey }) {
         center={[0,-1]}
         size={2}
         harmonicsConfig={{ scale: 0.2, seed: 538 }}
-        color={colors.blue}
+        color={colors.gray}
         style='solid'
         startFrame={0}
         endFrame={16}
@@ -154,7 +154,7 @@ function SeqProof({ windowSize, stepIndex, isPanelOpen, sceneKey }) {
         curve={spiralCurve}
         cutoff={40}
         k={0.8}
-        pointColor={colors.redeen}
+        pointColor={colors.blue}
         startFrame={2}
         endFrame={16}
         stepIndex={stepIndex}
@@ -163,7 +163,7 @@ function SeqProof({ windowSize, stepIndex, isPanelOpen, sceneKey }) {
         curve={chaoticCurve}
         cutoff={100}
         k={0.99}
-        pointColor={colors.redeen}
+        pointColor={colors.blue}
         startFrame={2}
         endFrame={16}
         stepIndex={stepIndex}
