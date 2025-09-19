@@ -3,7 +3,7 @@ import { TextOverlayLaTeX } from '../canvas/LaTeXRenderer'
 import { useWindowResize } from '../../hooks/useWindowResize'
 import { useSidebarWidth } from '../../hooks/useSidebarWidth'
 import { OVERLAY_ANIMATION_DURATION } from '../../constants/animations'
-import { useGoalSidebarWidth, useTextSizeMultiplier } from '../../constants/textSize'
+import { useGoalSidebarWidth, useTextSizeMultiplier, useVerticalMultiplier } from '../../constants/textSize'
 
 // Debug toggle - set to false to hide debug panel
 const DEBUG = false
@@ -17,7 +17,7 @@ function TextOverlay({
   // Get real-time window size and sidebar width
   const windowSize = useWindowResize()
   const currentSidebarWidth = useSidebarWidth()
-  const textSizeMultiplier = useTextSizeMultiplier()
+  const textSizeMultiplier = useTextSizeMultiplier() * useVerticalMultiplier()
   const goalSidebarWidth = useGoalSidebarWidth()
   
   // Animation state for text only (unchanged behavior)
@@ -99,7 +99,7 @@ function TextOverlay({
         const measuringHeight = measuringTextRef.current.offsetHeight
         setMeasuringTextHeight(measuringHeight)
         // Calculate optimal gradient height (measuring text height + 100px)
-        const optimalGradientHeight = measuringHeight + 100 * textSizeMultiplier
+        const optimalGradientHeight = measuringHeight
         setTargetGradientHeight(optimalGradientHeight)
       } else if (!measuringText) {
         // Reset heights when no text

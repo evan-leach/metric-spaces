@@ -14,6 +14,13 @@ function getSidebarWidth(width) {
   return 150
 }
 
+function getVerticalMultiplier(height) {
+  if (height >= 660) return 1
+  if (height >= 400) return 0.8
+  if (height >= 240) return 0.6
+  return 0.5
+}
+
 export function useTextSizeMultiplier() {
   const [multiplier, setMultiplier] = useState(() =>
     typeof window !== 'undefined' ? getTextSizeMultiplier(window.innerWidth) : 1
@@ -22,6 +29,22 @@ export function useTextSizeMultiplier() {
   useEffect(() => {
     function handleResize() {
       setMultiplier(getTextSizeMultiplier(window.innerWidth))
+    }
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
+  return multiplier
+}
+
+export function useVerticalMultiplier() {
+  const [multiplier, setMultiplier] = useState(() =>
+    typeof window !== 'undefined' ? getVerticalMultiplier(window.innerHeight) : 1
+  )
+
+  useEffect(() => {
+    function handleResize() {
+      setMultiplier(getVerticalMultiplier(window.innerHeight))
     }
     window.addEventListener('resize', handleResize)
     return () => window.removeEventListener('resize', handleResize)

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useGoalSidebarWidth } from '../../constants/textSize'
+import { useGoalSidebarWidth, useTextSizeMultiplier } from '../../constants/textSize'
 
 function StepIndicator({ 
   currentStep, 
@@ -9,6 +9,7 @@ function StepIndicator({
 }) {
   const [hoveredIndex, setHoveredIndex] = useState(null)
   const goalSidebarWidth = useGoalSidebarWidth()
+  const textSizeMultiplier = useTextSizeMultiplier()
 
   return (
     <div style={{
@@ -18,10 +19,10 @@ function StepIndicator({
       transform: 'translateX(-50%)',
       transition: 'left 0.3s ease-in-out',
       display: 'flex',
-      gap: '8px',
+      gap: `${8 * textSizeMultiplier}px`,
       alignItems: 'center',
       backgroundColor: 'rgba(255, 255, 255, 0.3)',
-      padding: '12px 20px',
+      padding: `${12 * textSizeMultiplier}px ${20 * textSizeMultiplier}px`,
       borderRadius: '25px',
       boxShadow: '0 4px 15px rgba(0, 0, 0, 0.1)',
       zIndex: 1000,
@@ -35,8 +36,8 @@ function StepIndicator({
           <div
             key={index}
             style={{
-              width: isActive ? '12px' : '10px',
-              height: isActive ? '12px' : '10px',
+              width: isActive ? `${12 * textSizeMultiplier}px` : `${10 * textSizeMultiplier}px`,
+              height: isActive ? `${12 * textSizeMultiplier}px` : `${10 * textSizeMultiplier}px`,
               borderRadius: '50%',
               backgroundColor: isActive ? '#999999' : isHovered ? '#999999' : '#cccccc',
               transition: 'all 0.3s ease',

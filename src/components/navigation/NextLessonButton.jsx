@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { colors } from '../../config/colors'
 import { useFrameBasedOpacity } from '../../hooks/useFrameBasedOpacity'
-import { useTextSizeMultiplier } from '../../constants/textSize'
+import { useTextSizeMultiplier, useGoalSidebarWidth, useVerticalMultiplier } from '../../constants/textSize'
 
 function NextLessonButton({ 
   nextSceneText,
@@ -13,6 +13,8 @@ function NextLessonButton({
 }) {
   const [displayText, setDisplayText] = useState('')
   const textSizeMultiplier = useTextSizeMultiplier()
+  const goalSidebarWidth = useGoalSidebarWidth()
+  const verticalMultiplier = useVerticalMultiplier()
   
   // Calculate the last step index for frame-based opacity
   const numSteps = currentConfig?.steps ? currentConfig.steps.length + 1 : 1
@@ -46,10 +48,10 @@ function NextLessonButton({
   return (
     <div style={{
       position: 'fixed',
-      bottom: '110px',
-      left: isPanelOpen ? 'calc(50% + 150px)' : '50%',
+      bottom: `${Math.max(110 * textSizeMultiplier * verticalMultiplier, 55)}px`,
+      left: isPanelOpen ? `calc(50% + ${goalSidebarWidth / 2}px)` : '50%',
       transform: 'translateX(-50%)',
-      transition: 'left 0.3s ease-in-out',
+      transition: 'left 0.3s ease-in-out, bottom 0.3s ease-in-out',
       opacity: finalOpacity,
       zIndex: 502, // Above TextOverlay (500-501)
       pointerEvents: showButton ? 'auto' : 'none'
@@ -61,7 +63,7 @@ function NextLessonButton({
             backgroundColor: colors.blue,
             color: 'white',
             border: 'none',
-            padding: `${20 * textSizeMultiplier}px ${40 * textSizeMultiplier}px`,
+            padding: `${20 * textSizeMultiplier * verticalMultiplier}px ${40 * textSizeMultiplier * verticalMultiplier}px`,
             borderRadius: '12px',
             fontSize: `${20 * textSizeMultiplier}px`,
             fontWeight: '600',

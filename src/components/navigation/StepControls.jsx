@@ -1,5 +1,5 @@
 import React from 'react'
-import { useGoalSidebarWidth } from '../../constants/textSize'
+import { useGoalSidebarWidth, useTextSizeMultiplier } from '../../constants/textSize'
 
 function StepControls({ 
   stepIndex, 
@@ -11,6 +11,7 @@ function StepControls({
 
   const goalSidebarWidth = useGoalSidebarWidth()
   const leftMargin = isPanelOpen ? goalSidebarWidth  - 5 : -5
+  const textSizeMultiplier = useTextSizeMultiplier()
 
   return (
     <>
@@ -29,7 +30,7 @@ function StepControls({
           transition: 'left 0.3s ease-in-out, transform 0.1s ease, opacity 0.2s ease',
           opacity: stepIndex <= 0 ? 0.4 : 0.9,
           filter: stepIndex <= 0 ? 'drop-shadow(0 10px 30px rgba(0,0,0,0.6))' : 'drop-shadow(0 20px 60px rgba(0,0,0,0.8))',
-          width: '90px',
+          width: `${90 * textSizeMultiplier}px`,
           height: '160px'
         }}
         onMouseEnter={(e) => {
@@ -60,7 +61,7 @@ function StepControls({
           transition: 'transform 0.1s ease, opacity 0.2s ease',
           opacity: stepIndex >= numSteps - 1 ? 0.4 : 0.9,
           filter: stepIndex >= numSteps - 1 ? 'drop-shadow(0 10px 30px rgba(0,0,0,0.6))' : 'drop-shadow(0 20px 60px rgba(0,0,0,0.8))',
-          width: '90px',
+          width: `${90 * textSizeMultiplier}px`,
           height: '160px'
         }}
         onMouseEnter={(e) => {
