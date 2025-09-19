@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { colors } from '../../config/colors'
 import { useFrameBasedOpacity } from '../../hooks/useFrameBasedOpacity'
+import { useTextSizeMultiplier } from '../../constants/textSize'
 
 function NextLessonButton({ 
   nextSceneText,
@@ -11,6 +12,7 @@ function NextLessonButton({
   stepIndex = 0
 }) {
   const [displayText, setDisplayText] = useState('')
+  const textSizeMultiplier = useTextSizeMultiplier()
   
   // Calculate the last step index for frame-based opacity
   const numSteps = currentConfig?.steps ? currentConfig.steps.length + 1 : 1
@@ -59,9 +61,9 @@ function NextLessonButton({
             backgroundColor: colors.blue,
             color: 'white',
             border: 'none',
-            padding: '20px 40px',
+            padding: `${20 * textSizeMultiplier}px ${40 * textSizeMultiplier}px`,
             borderRadius: '12px',
-            fontSize: '20px',
+            fontSize: `${20 * textSizeMultiplier}px`,
             fontWeight: '600',
             cursor: 'pointer',
             boxShadow: `0 6px 20px rgba(0, 0, 0, 0.15)`,

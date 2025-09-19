@@ -1,15 +1,19 @@
 import React from 'react'
 import SidebarButton from './SidebarButton'
 import { sidebarConfig } from '../../config/sidebarConfig'
+import { useTextSizeMultiplier } from '../../constants/textSize'
 
 // Section header component
 function SectionHeader({ title }) {
+
+  const textSizeMultiplier = useTextSizeMultiplier()
+
   return (
     <div style={{
       backgroundColor: '#bdc3c7',
       color: '#2c3e50',
       padding: '15px 20px',
-      fontSize: '18px',
+      fontSize: `${18 * Math.sqrt(textSizeMultiplier)}px`,
       fontWeight: 'bold',
       borderBottom: '1px solid #95a5a6',
       textAlign: 'center'

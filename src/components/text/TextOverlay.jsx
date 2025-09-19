@@ -2,7 +2,8 @@ import React, { useState, useEffect, useRef } from 'react'
 import { TextOverlayLaTeX } from '../canvas/LaTeXRenderer'
 import { useWindowResize } from '../../hooks/useWindowResize'
 import { useSidebarWidth } from '../../hooks/useSidebarWidth'
-import { OVERLAY_ANIMATION_DURATION, SIDEBAR_WIDTH } from '../../constants/animations'
+import { OVERLAY_ANIMATION_DURATION } from '../../constants/animations'
+import { useTextSizeMultiplier } from '../../constants/textSize'
 
 // Debug toggle - set to false to hide debug panel
 const DEBUG = false
@@ -16,6 +17,7 @@ function TextOverlay({
   // Get real-time window size and sidebar width
   const windowSize = useWindowResize()
   const currentSidebarWidth = useSidebarWidth()
+  const textSizeMultiplier = useTextSizeMultiplier()
   
   // Animation state for text only (unchanged behavior)
   const [currentText, setCurrentText] = useState(text)
@@ -308,10 +310,10 @@ function TextOverlay({
   }
 
   // Calculate fixed textbox width (matches sidebar-open width regardless of sidebar state)
-  const fixedTextboxWidth = Math.max(200, 0.8 * (windowSize.width - SIDEBAR_WIDTH))
+  const fixedTextboxWidth = Math.max(200, 0.8 * (windowSize.width - 300))
 
   const textStyle = {
-    fontSize: '24px',
+    fontSize: `${24 * textSizeMultiplier}px`,
     fontFamily: 'Open Sans, sans-serif',
     fontWeight: '600',
     color: '#000000',

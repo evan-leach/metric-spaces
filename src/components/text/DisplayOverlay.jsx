@@ -1,6 +1,7 @@
 import React from 'react'
 import { LaTeXMath } from '../canvas/LaTeXRenderer'
 import { useFrameBasedOpacity } from '../../hooks/useFrameBasedOpacity'
+import { useTextSizeMultiplier } from '../../constants/textSize'
 
 function DisplayOverlay({ 
   line1 = "",
@@ -12,7 +13,8 @@ function DisplayOverlay({
 }) {
   // Use frame-based opacity for fading animation
   const currentOpacity = useFrameBasedOpacity(startFrame, endFrame, stepIndex)
-  
+  const textSizeMultiplier = useTextSizeMultiplier()
+
   // Don't render if not visible
   if (currentOpacity <= 0) {
     return null
@@ -36,7 +38,7 @@ function DisplayOverlay({
         boxShadow: '0 4px 15px rgba(0, 0, 0, 0.1)',
         zIndex: 400, // Below text overlay (500-501) but above canvas content
         backdropFilter: 'blur(10px)',
-        fontSize: '16px',
+        fontSize: `${16 * textSizeMultiplier}px`,
         fontFamily: 'inherit'
       }}>
         <div style={{
@@ -51,7 +53,7 @@ function DisplayOverlay({
             display: 'flex',
             alignItems: 'center',
             gap: '12px',
-            fontSize: '14px',
+            fontSize: `${14 * textSizeMultiplier}px`,
             color: '#666'
           }}>
             <LaTeXMath math={line2} />

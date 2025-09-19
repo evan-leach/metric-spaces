@@ -1,6 +1,10 @@
 import React from 'react'
+import { useTextSizeMultiplier } from '../../constants/textSize'
 
 function SidebarButton({ text, onClick, isActive = false }) {
+
+  const textSizeMultiplier = useTextSizeMultiplier()
+
   return (
     <button
       style={{
@@ -10,7 +14,7 @@ function SidebarButton({ text, onClick, isActive = false }) {
         color: '#2c3e50',
         border: 'none',
         borderBottom: '1px solid #bdc3c7',
-        fontSize: '15px',
+        fontSize: `${15 * Math.pow(textSizeMultiplier, 0.3)}px`,
         textAlign: 'left',
         cursor: 'pointer',
         transition: 'background-color 0.2s ease'
