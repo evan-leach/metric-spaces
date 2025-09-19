@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import { useSidebarWidth } from '../../hooks/useSidebarWidth'
 import { useWindowResize } from '../../hooks/useWindowResize'
 import { OVERLAY_ANIMATION_DURATION } from '../../constants/animations'
-import { useTextSizeMultiplier } from '../../constants/textSize'
+import { useTextSizeMultiplier, useGoalSidebarWidth } from '../../constants/textSize'
 
 // Debug toggle - set to false to hide debug panel
 const DEBUG = false
@@ -16,6 +16,7 @@ function TitleOverlay({
   const currentSidebarWidth = useSidebarWidth()
   const windowSize = useWindowResize()
   const textSizeMultiplier = useTextSizeMultiplier()
+  const goalSidebarWidth = useGoalSidebarWidth()
   
   // Animation states
   const [shouldRender, setShouldRender] = useState(false)
@@ -166,7 +167,7 @@ function TitleOverlay({
    }
 
      // Calculate fixed textbox width (matches sidebar-open width regardless of sidebar state)
-   const fixedTextboxWidth = Math.max(200, 0.8 * (windowSize.width - 300))
+   const fixedTextboxWidth = Math.max(200, 0.8 * (windowSize.width - goalSidebarWidth))
 
      // Title content style
    const titleContentStyle = {

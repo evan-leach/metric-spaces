@@ -3,7 +3,7 @@ import { TextOverlayLaTeX } from '../canvas/LaTeXRenderer'
 import { useWindowResize } from '../../hooks/useWindowResize'
 import { useSidebarWidth } from '../../hooks/useSidebarWidth'
 import { OVERLAY_ANIMATION_DURATION } from '../../constants/animations'
-import { useTextSizeMultiplier } from '../../constants/textSize'
+import { useGoalSidebarWidth, useTextSizeMultiplier } from '../../constants/textSize'
 
 // Debug toggle - set to false to hide debug panel
 const DEBUG = false
@@ -18,6 +18,7 @@ function TextOverlay({
   const windowSize = useWindowResize()
   const currentSidebarWidth = useSidebarWidth()
   const textSizeMultiplier = useTextSizeMultiplier()
+  const goalSidebarWidth = useGoalSidebarWidth()
   
   // Animation state for text only (unchanged behavior)
   const [currentText, setCurrentText] = useState(text)
@@ -98,7 +99,7 @@ function TextOverlay({
         const measuringHeight = measuringTextRef.current.offsetHeight
         setMeasuringTextHeight(measuringHeight)
         // Calculate optimal gradient height (measuring text height + 100px)
-        const optimalGradientHeight = measuringHeight + 100
+        const optimalGradientHeight = measuringHeight + 100 * textSizeMultiplier
         setTargetGradientHeight(optimalGradientHeight)
       } else if (!measuringText) {
         // Reset heights when no text
@@ -310,7 +311,7 @@ function TextOverlay({
   }
 
   // Calculate fixed textbox width (matches sidebar-open width regardless of sidebar state)
-  const fixedTextboxWidth = Math.max(200, 0.8 * (windowSize.width - 300))
+  const fixedTextboxWidth = Math.max(200, 0.8 * (windowSize.width - goalSidebarWidth))
 
   const textStyle = {
     fontSize: `${24 * textSizeMultiplier}px`,

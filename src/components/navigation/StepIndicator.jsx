@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useGoalSidebarWidth } from '../../constants/textSize'
 
 function StepIndicator({ 
   currentStep, 
@@ -7,12 +8,13 @@ function StepIndicator({
   isPanelOpen 
 }) {
   const [hoveredIndex, setHoveredIndex] = useState(null)
+  const goalSidebarWidth = useGoalSidebarWidth()
 
   return (
     <div style={{
       position: 'fixed',
       bottom: '20px',
-      left: isPanelOpen ? 'calc(50% + 150px)' : '50%',
+      left: isPanelOpen ? `calc(50% + ${goalSidebarWidth / 2}px)` : '50%',
       transform: 'translateX(-50%)',
       transition: 'left 0.3s ease-in-out',
       display: 'flex',

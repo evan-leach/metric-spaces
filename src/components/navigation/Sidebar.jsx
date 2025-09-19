@@ -1,7 +1,7 @@
 import React from 'react'
 import SidebarButton from './SidebarButton'
 import { sidebarConfig } from '../../config/sidebarConfig'
-import { useTextSizeMultiplier } from '../../constants/textSize'
+import { useTextSizeMultiplier, useGoalSidebarWidth } from '../../constants/textSize'
 
 // Section header component
 function SectionHeader({ title }) {
@@ -32,6 +32,8 @@ function Sidebar({ isOpen, onToggle, onSceneChange, activeScene }) {
     }
   }
 
+  const goalSidebarWidth = useGoalSidebarWidth()
+
   return (
     <>
       {/* Collapsible Left Panel */}
@@ -39,14 +41,14 @@ function Sidebar({ isOpen, onToggle, onSceneChange, activeScene }) {
         data-sidebar
         style={{
           position: 'fixed',
-          left: isOpen ? '0' : '-300px',
+          left: isOpen ? '0' : `-${goalSidebarWidth}px`,
           top: '0',
-          width: '300px',
+          width: `${goalSidebarWidth}px`,
           height: '100vh',
           backgroundColor: '#ecf0f1',
           color: '#2c3e50',
           zIndex: 1000,
-          transition: 'left 0.3s ease-in-out, box-shadow 0.3s ease-in-out',
+          transition: 'left 0.3s ease-in-out, width 0.3s ease-in-out, box-shadow 0.3s ease-in-out',
           boxShadow: isOpen ? '2px 0 10px rgba(0,0,0,0.3)' : 'none',
           padding: '0',
           boxSizing: 'border-box',
@@ -73,7 +75,7 @@ function Sidebar({ isOpen, onToggle, onSceneChange, activeScene }) {
         onClick={onToggle}
         style={{
           position: 'fixed',
-          left: isOpen ? '300px' : '0px',
+          left: isOpen ? `${goalSidebarWidth}px` : '0px',
           top: '0px',
           width: '55px',
           height: '55px',

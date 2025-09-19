@@ -9,7 +9,7 @@ export function useSidebarWidth() {
       if (sidebar) {
         const rect = sidebar.getBoundingClientRect()
         // Calculate visible width - sidebar slides in from left
-        const visibleWidth = Math.max(0, Math.min(300, rect.right))
+        const visibleWidth = Math.max(0, rect.right)
         setSidebarWidth(visibleWidth)
       }
     }

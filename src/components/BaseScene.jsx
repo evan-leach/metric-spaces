@@ -4,6 +4,7 @@ import Grid from './canvas/Grid'
 import TextOverlay from './text/TextOverlay'
 import TitleOverlay from './text/TitleOverlay'
 import { getSceneTitleInfo } from '../utils/sceneConfig'
+import { useGoalSidebarWidth } from '../constants/textSize' 
 
 // Default configuration values
 const DEFAULT_CONFIG = {
@@ -24,6 +25,7 @@ function BaseScene({
   const [showPerf, setShowPerf] = React.useState(false)
   const [fpsInfo, setFpsInfo] = React.useState({ fps: 0, ms: 0 })
   const perfRef = React.useRef({ last: performance.now(), frames: 0, acc: 0, lastReport: performance.now() })
+  const goalSidebarWidth = useGoalSidebarWidth()
 
   React.useEffect(() => {
     const onKey = (e) => {
@@ -108,7 +110,7 @@ function BaseScene({
 
   return (
     <div style={{
-      marginLeft: isPanelOpen ? '300px' : '0',
+      marginLeft: isPanelOpen ? `${goalSidebarWidth}px` : '0',
       transition: 'margin-left 0.3s ease-in-out',
       height: '100vh'
     }}>

@@ -1,4 +1,5 @@
 import React from 'react'
+import { useGoalSidebarWidth } from '../../constants/textSize'
 
 function StepControls({ 
   stepIndex, 
@@ -7,6 +8,10 @@ function StepControls({
   onIncrease, 
   isPanelOpen 
 }) {
+
+  const goalSidebarWidth = useGoalSidebarWidth()
+  const leftMargin = isPanelOpen ? goalSidebarWidth  - 5 : -5
+
   return (
     <>
       {/* Left Arrow - Decrease Step */}
@@ -15,7 +20,7 @@ function StepControls({
         onClick={stepIndex > 0 ? onDecrease : undefined}
         style={{
           position: 'fixed',
-          left: isPanelOpen ? '295px' : '-5px',
+          left: `${leftMargin}px`,
           top: '50%',
           transform: 'translateY(-50%)',
           cursor: stepIndex <= 0 ? 'default' : 'pointer',
