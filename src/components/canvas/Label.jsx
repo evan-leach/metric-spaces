@@ -64,12 +64,12 @@ function Label({
     }
   }
   
-  const finalPosition = calculateLabelPosition(position, attach, attachDistance)
+  const finalPosition = calculateLabelPosition(position, attach, attachDistance * Math.sqrt(textSizeMultiplier))
   
   // Render LaTeX or regular text
   if (isLaTeX(labelContent)) {
     return (
-      <g style={{ opacity }}>
+      <g style={{ opacity, fontSize: `${Math.sqrt(textSizeMultiplier)}rem` }}>
         <LaTeX
           tex={String.raw`${labelContent.replace(/\$/g, '')}`}
           at={finalPosition}
