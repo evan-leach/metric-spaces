@@ -301,7 +301,7 @@ function TextOverlay({
     display: 'flex',
     alignItems: textTopOnly ? 'flex-start' : 'center',
     justifyContent: 'center',
-    paddingTop: textTopOnly ? '40px' : '0',
+    paddingTop: textTopOnly ? `${40 * textSizeMultiplier * textSizeMultiplier}px` : '0',
     paddingLeft: '20px',
     paddingRight: '20px',
     pointerEvents: 'none',
