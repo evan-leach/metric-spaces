@@ -256,7 +256,6 @@ function TextOverlay({
     left: `${currentSidebarWidth}px`,
     right: 0,
     bottom: 0,
-    height: '100vh',
     backgroundColor: `rgba(240, 240, 240, ${0.85 * fullscreenBgOpacity})`,
     pointerEvents: fullscreenVisible ? 'auto' : 'none', // Block clicks only when visible (fullscreen mode)
     zIndex: 500,
@@ -293,11 +292,10 @@ function TextOverlay({
   // Text container style (completely independent positioning)
   const textContainerStyle = {
     position: 'fixed',
-    top: 0,
     left: `${currentSidebarWidth}px`,
     right: 0,
+    top: 0,
     bottom: textTopOnly ? 'auto' : 0,
-    height: textTopOnly ? 'auto' : '100vh',
     display: 'flex',
     alignItems: textTopOnly ? 'flex-start' : 'center',
     justifyContent: 'center',

@@ -138,7 +138,7 @@ function App() {
 
   return (
     <div style={{ 
-      height: '100vh', 
+      height: '100dvh', 
       boxSizing: 'border-box',
       position: 'relative',
       overflow: 'hidden'

@@ -112,7 +112,7 @@ function BaseScene({
     <div style={{
       marginLeft: isPanelOpen ? `${goalSidebarWidth}px` : '0',
       transition: 'margin-left 0.3s ease-in-out',
-      height: '100vh'
+      height: '100dvh'
     }}>
       <ZoomController
         width="auto"

@@ -44,7 +44,7 @@ function Sidebar({ isOpen, onToggle, onSceneChange, activeScene }) {
           left: isOpen ? '0' : `-${goalSidebarWidth}px`,
           top: '0',
           width: `${goalSidebarWidth}px`,
-          height: '100vh',
+          bottom: '0',
           backgroundColor: '#ecf0f1',
           color: '#2c3e50',
           zIndex: 1000,
