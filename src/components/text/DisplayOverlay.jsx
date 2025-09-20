@@ -1,7 +1,7 @@
 import React from 'react'
 import { LaTeXMath } from '../canvas/LaTeXRenderer'
 import { useFrameBasedOpacity } from '../../hooks/useFrameBasedOpacity'
-import { useTextSizeMultiplier } from '../../constants/textSize'
+import { useTextSizeMultiplier, useGoalSidebarWidth, useVerticalMultiplier } from '../../constants/textSize'
 
 function DisplayOverlay({ 
   line1 = "",
@@ -14,6 +14,8 @@ function DisplayOverlay({
   // Use frame-based opacity for fading animation
   const currentOpacity = useFrameBasedOpacity(startFrame, endFrame, stepIndex)
   const textSizeMultiplier = useTextSizeMultiplier()
+  const verticalMultiplier = useVerticalMultiplier()
+  const goalSidebarWidth = useGoalSidebarWidth()
 
   // Don't render if not visible
   if (currentOpacity <= 0) {
@@ -24,10 +26,10 @@ function DisplayOverlay({
     <div style={{ opacity: currentOpacity }}>
       <div style={{
         position: 'fixed',
-        bottom: '90px', // Position above StepIndicator (which is at 20px)
-        left: isPanelOpen ? 'calc(50% + 150px)' : '50%',
+        bottom: `${Math.max(110 * textSizeMultiplier * verticalMultiplier, 65)}px`,
+        left: isPanelOpen ? `calc(50% + ${goalSidebarWidth / 2}px)` : '50%',
         transform: 'translateX(-50%)',
-        transition: 'left 0.3s ease-in-out',
+        transition: 'left 0.3s ease-in-out, bottom 0.3s ease-in-out',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Text, LaTeX, useTransformContext, vec } from 'mafs'
 import { colors } from '../../config/colors'
-import { useTextSizeMultiplier } from '../../constants/textSize'
+import { useTextSizeMultiplier, useVerticalMultiplier } from '../../constants/textSize'
 
 /**
  * Reusable Label component for Points, Blobs, and other objects
@@ -20,7 +20,7 @@ function Label({
   // Get current transform context for screen-space calculations
   const { viewTransform } = useTransformContext()
   const pixelsPerSquare = -vec.det(viewTransform)
-  const textSizeMultiplier = useTextSizeMultiplier()
+  const textSizeMultiplier = useTextSizeMultiplier() * useVerticalMultiplier()
   
   // Don't render if no label context provided
   if (!labelContext) {
