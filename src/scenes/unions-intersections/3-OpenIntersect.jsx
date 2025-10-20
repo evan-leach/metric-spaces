@@ -37,8 +37,8 @@ export const SceneConfig = {
     "TOP: Here's an example of how we can use this fact. This square, consisting of all points whose $x$ and $y$\
     coordinates are both strictly between $-1$ and $1$, is open...",
     "TOP: ...because it's the intersection of these two strips (which we proved in the last lesson were open).",
-    "Now to answer the initial question: why does this proof only work for a finite number of open sets? $$$$ We will\
-    answer this question in the next lesson, and we will see what can go wrong if infinitely many open sets are involved."
+    "At the start of this lesson, we mentioned that this proof only works for a finite number of open sets. Why? $$$$\
+    We'll see in the next lesson exactly where things can go wrong if infinitely many open sets are involved."
   ]
 }
 

@@ -47,11 +47,10 @@ export const SceneConfig = {
     of $A$ guarantees that this Cauchy set has a limit point in $A$.",
     "TOP: Since $X$ is a subset of $S$, any limit point of $X$ is also a limit point of $S$. We have therefore proven that any infinite\
     subset $S$ of $A$ has a limit point in $A$, so $A$ is sequentially compact.",
-    "With this proof, we can now fill in another arrow in our chain of implications: $$\\text{Compact}$$ $$\\Downarrow$$\
+    "After this challenging proof, we can now fill in another arrow in our chain of implications: $$\\text{Compact}$$ $$\\Downarrow$$\
     $$\\text{Sequentially compact}$$ $$\\Updownarrow$$ $$\\text{Complete and totally bounded}$$",
-    "After this challenging proof, we have just one step remaining. We need to prove that every sequentially compact set is compact\
-    in order to fill in that last arrow.",
-    "Though this final is also challenging, it will enable us to pin down the elusive compact sets and definitively\
+    "We have just one step remaining. We need to prove that every sequentially compact set is compact in order to fill in that last arrow.",
+    "Though this final step is also challenging, it will enable us to pin down the elusive compact sets and definitively\
     say what they _actually are:_ sets which are complete and totally bounded. We'll begin in the next lesson."
   ]
 }
@@ -434,6 +433,8 @@ function SeqProof({ windowSize, stepIndex, isPanelOpen, sceneKey }) {
         strokeStyle="solid"
         fillOpacity={0}
         strokeOpacity={0}
+        startFrame={0}
+        endFrame={13}
         showCenterPoint={false}
         labelContext={() => `$A_n$`}
         labelAttach='se'
