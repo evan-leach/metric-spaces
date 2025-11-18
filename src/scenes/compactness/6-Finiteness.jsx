@@ -30,7 +30,7 @@ export const SceneConfig = {
     any set which is both compact and discrete _must_ be finite. $$$$ As we'll see, sequential compactness is the key to proving\
     this.",
     "TOP: If a set $A$ is compact, then it is sequentialy compact. This means that every infinite subset of $A$, including $A$\
-    itself has a limit point in $A$. If $A$ is infinite, then this means that $A$ contains one of its limit points.",
+    itself, has a limit point in $A$. If $A$ is infinite, then this means that $A$ contains one of its limit points.",
     "TOP: Since a discrete set does not contain any of its limit points, this means that any infinite compact set is not discrete.\
     $$$$ In other words, the _only_ way a set can be both compact and discrete is if it is finite.",
     "We have proven that a set $A$ is finite _if and only if_ it is both compact and discrete. $$$$ We call this a\
