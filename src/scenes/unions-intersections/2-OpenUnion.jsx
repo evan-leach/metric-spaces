@@ -43,7 +43,7 @@ export const SceneConfig = {
     its still defined as the set of all points whose distance from $T$ is less than $1$.",
     "TOP: For example, if we define $T$ to be the $x$-axis, then $U$ is the set of all points whose $y$-coordinate is less strictly\
     between $-1$ and $1$. $$$$ With hardly any work, we've proven that this set is open.",
-    "Infnity hasn't been an issue for us so far, but it's about to start causing problems. $$$$ Our next question is whether an\
+    "Infinity hasn't been an issue for us so far, but it's about to start causing problems. $$$$ Our next question is whether an\
     intersection of open sets is open, and answering it will be a little more complicated. In fact, our proof will only work\
     for a _finite_ number of open sets."
   ]

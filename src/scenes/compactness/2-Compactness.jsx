@@ -26,7 +26,7 @@ export const SceneConfig = {
     less flexible than arbitrary covers, there are still a huge variety of open covers to pick from. These can\
     range from simple...",
     "TOP: ...to complex...",
-    "TOP: ...to bizzare. $$$$ If a set $K$ is compact, then _any_ of these open covers must have a finite\
+    "TOP: ...to bizarre. $$$$ If a set $K$ is compact, then _any_ of these open covers must have a finite\
     subcover. We'll see in the rest of this section that we can do a lot with these open covers.",
     "The second question asks which sets are compact. We know that finite sets are compact; every cover, open or\
     not, of finite set has a finite subcover. $$$$ Which infinite sets are compact, though?",

@@ -29,7 +29,7 @@ export const SceneConfig = {
     $$$$ Although the points of $A$ get closer and closer to it, none of the other points in this cluster are _limit points._\
     $$$$ Zoom in to convince yourself of this, and zoom back out when you're done.",
     "Suppose $x$ is a limit point of a set $A$. The definition of limit points tells us that every neighborhood of $x$ contains at least one\
-    point of $A$ other than $x$ itself. However, something much more suprising is also true: $$$$ Every neighborhood of $x$ must\
+    point of $A$ other than $x$ itself. However, something much more surprising is also true: $$$$ Every neighborhood of $x$ must\
     contain _infinitely many_ points of $A$. $$$$ How can this be? And why is infinity showing up?",
     "TOP: Even if a neighborhood of some point $y$ contains a point in $A$ other than $y$, it might not contain more than one, let alone\
     _infinitely many._ $$$$ Here is an example. Does this disprove our claim that every neighborhood of a limit point contains\

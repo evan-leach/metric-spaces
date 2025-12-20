@@ -57,7 +57,7 @@ export const SceneConfig = {
     "TOP: What if the process _does_ go on indefinitely? Then the only way $X$ can be finite in this case is if some point gets repeated\
     infinitely many times. This is impossible, though, since for any fixed point $x$ in $A$, any sufficiently small neighborhood of $x$\
     is fully contained in some open set in the cover.",
-    "TOP: In other words, the only way that the process can go on forever is if $X$ is infinite. $$$$ We have _encoded_ the existance of a\
+    "TOP: In other words, the only way that the process can go on forever is if $X$ is infinite. $$$$ We have _encoded_ the existence of a\
     Lebesgue number into the set $X$. The set $A$ has a Lebesgue number _if and only if _ $X$ is finite.",
     "TOP: Now we can use sequential compactness! Since every infinite subset of $A$ has a limit point in $A$, we can prove that $X$ is finite\
     by showing that it has no limit points in $A$.",

@@ -42,10 +42,10 @@ export const SceneConfig = {
     must be an element of $K$. In other words, $K$ is closed.",
     "We now have another example of how compact sets are similar to finite sets. Finite sets are closed (as finite unions\
     of closed singletons), and compact sets again share this property.",
-    "You should take see what happens if we try to do the steps in this proof for a set which is not closed. If you use\
+    "You should see what happens if we try to do the steps in this proof for a set which is not closed. If you use\
     a boundary point of such a set which is not an element of the set, you'll find an open cover with no finite subcover.",
     "So far the properties we've proven about compact sets have all been simple and familiar. In the next lesson, we'll\
-    prove a far more interesting and suprising property about compact sets."
+    prove a far more interesting and surprising property about compact sets."
   ]
 }
 

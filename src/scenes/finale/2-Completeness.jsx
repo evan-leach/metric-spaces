@@ -28,7 +28,7 @@ export const SceneConfig = {
     "TOP: Take a look at this set of points. They are getting closer and closer to some point, but remember our goal is to\
     not reference any actual limit point. Instead, notice that the points are also getting closer and closer to _each other._",
     "TOP: More precisely, we can fit all but finitely many of these points inside of a neighborhood with a small radius.",
-    "TOP: As the radius gets smaller, we miss more and more of the points. However, we can still fit the infnite cluster\
+    "TOP: As the radius gets smaller, we miss more and more of the points. However, we can still fit the infinite cluster\
     inside the neighborhood, leaving only finitely many points behind. Zoom in to see this clearly!",
     "TOP: This is the observation we will use for our definition. $$$$ We call a set $A$ a *Cauchy set* if $A$ is infinite\
     and for every $r > 0$, there is a neighborhood of radius $r$ which contains all but finitely many points of $A$.",

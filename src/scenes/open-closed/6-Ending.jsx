@@ -18,7 +18,7 @@ export const SceneConfig = {
     "TOP: Sometimes, it's not obvious whether one fact implies another. For example, if $x$ is an interior point of $A$, must\
     $x$ be a limit point of $A$? $$$$ This is a tricky question, and the answer is on the next slide. Since we won't need to use\
     this fact any time in the future, feel free to skip it.",
-    "Suprisingly, we can find a counterexample! Some interior points are not limit points, but we need to use a different\
+    "Surprisingly, we can find a counterexample! Some interior points are not limit points, but we need to use a different\
     metric space in order for this to be possible. If you're looking for a challenge, here are two questions: $$$$ 1. Can you find such\
     a counterexample using the discrete metric? $$$$ 2. When using the coordinate plane and Euclidean metric, every\
     neighborhood has multiple points. How does this explain why we can't find a counterexample with our usual metric space?",
@@ -55,7 +55,7 @@ export const SceneConfig = {
     boundaries, sets whose complements are open, and sets containing all of their limit points.",
     "With the end of this section, we have finished covering the fundamentals of metric spaces. You should make\
     sure you have a solid grasp of these ideas, as we are about to push them to their limits.",
-    "The next section takes us deeper into the world of infinity. You'll be suprised by how completely intuitive facts _break_ in\
+    "The next section takes us deeper into the world of infinity. You'll be surprised by how completely intuitive facts _break_ in\
     the infinite setting."
   ]
 }
