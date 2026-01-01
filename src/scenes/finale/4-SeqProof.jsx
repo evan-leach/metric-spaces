@@ -1,4 +1,4 @@
-import { useMemo } from 'react'
+import { useMemo, Fragment } from 'react'
 import BaseScene from '../../components/BaseScene'
 import { colors } from '../../config/colors'
 import Intersection from '../../components/objects/Intersection'
@@ -222,7 +222,7 @@ function SeqProof({ windowSize, stepIndex, isPanelOpen, sceneKey }) {
       />
 
       {Array.from({ length: 9 }).map((_, i) => (
-        <><Circle
+        <Fragment key={`pair-${i}`}><Circle
           key={`level-1-circle-${i}`}
           center={[0 + i % 3 * 0.5, -1 + Math.floor(i / 3) * 0.5]}
           keyframes={level1keyframes}
@@ -247,7 +247,7 @@ function SeqProof({ windowSize, stepIndex, isPanelOpen, sceneKey }) {
           startFrame={7}
           endFrame={7}
           stepIndex={stepIndex}
-        /></>
+        /></Fragment>
       ))}
 
       <Intersection

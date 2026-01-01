@@ -201,6 +201,7 @@ function Completeness({ windowSize, stepIndex, isPanelOpen, sceneKey }) {
         
         return (
           <InequalityPlot
+            key={`inequality-${n}`}
             xInequality={{ 
               ">": (y) => 0.8 + Math.pow(0.8, n)
             }}

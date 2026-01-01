@@ -1,4 +1,4 @@
-import { useMemo } from 'react'
+import { useMemo, Fragment } from 'react'
 import BaseScene from '../../components/BaseScene'
 import { colors } from '../../config/colors'
 import InequalityPlot from '../../components/objects/InequalityPlot'
@@ -157,7 +157,7 @@ function CTBProof({ windowSize, stepIndex, isPanelOpen, sceneKey }) {
 
       {Array.from({ length: 101 }, (_, n) => (
         <Circle
-          key={n}
+          key={`circle-${n}`}
           center={curve(n - 50)}
           keyframes={circlesKeyframes}
           stepIndex={stepIndex}
@@ -235,8 +235,8 @@ function CTBProof({ windowSize, stepIndex, isPanelOpen, sceneKey }) {
       />
 
       {Array.from({ length: 13 }, (_, n) => (
-        <><Circle
-          key={`circle-${n}`}
+        <Fragment key={`pair-${n}`}><Circle
+          key={`red-circle-${n}`}
           center={points(n)}
           keyframes={pointsKeyframes}
           stepIndex={stepIndex}
@@ -255,7 +255,7 @@ function CTBProof({ windowSize, stepIndex, isPanelOpen, sceneKey }) {
           startFrame={11}
           endFrame={14}
           stepIndex={stepIndex}
-        /></>
+        /></Fragment>
       ))}
 
       <PointSequence
