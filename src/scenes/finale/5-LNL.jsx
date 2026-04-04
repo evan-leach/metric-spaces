@@ -47,8 +47,8 @@ export const SceneConfig = {
     contained in any single open set in the cover. $$$$ This will be the first point in our set.",
     "TOP: If $\\frac{1}{2}$ is not a Lebesgue number of this cover, then there exists a point $x_2$ in $A$ such that $N_{1/2}(x_2)$ is not\
     contained in any single open set in the cover. $$$$ Now our set has a second point.",
-    "TOP: How long can we repeat this process? $$$$ If $\\frac{1}{n}$ ever becomes small enough that we can no longer a neighborhood\
-    $N_{1/n}(x_n)$ which is not contained in any single open set in the cover, this would mean that _every_ such neighborhood\
+    "TOP: How long can we repeat this process? $$$$ If $\\frac{1}{n}$ ever becomes small enough that we can no find longer a neighborhood\
+    $N_{1/n}(x_n)$ which is not contained in any single open set in the cover, this would mean that _every_ neighborhood with radius $1/n$\
     is fully contained in some open set in the cover. In other words, $\\frac{1}{n}$ would be a Lebesgue number of the cover.",
     "TOP: If, on the other hand, we can continue indefinitely, this would mean that $A$ has no Lebesgue number. Our goal will be to show\
     that this cannot happen. If the process must terminate, then it means this covering has a Lebesgue number.",
